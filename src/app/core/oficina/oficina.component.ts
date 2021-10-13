@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./oficina.component.scss'],
 })
 export class OficinaComponent implements OnInit {
-  norte = 'norte';
-  sur = 'sur';
-  este = 'este';
-  oeste = 'oeste';
-  plaza = 'plaza';
+  norte = 'Oficina norte';
+  sur = 'Oficina sur';
+  este = 'Oficina este';
+  oeste = 'Oficina oeste';
+  plaza = 'Plaza';
   constructor() {}
 
   ngOnInit(): void {}

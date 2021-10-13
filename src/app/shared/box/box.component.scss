@@ -1,4 +1,19 @@
 .container {
   background-color: white;
-  box-shadow: 3px 3px 10px 1px black;
+  box-shadow: 0px 0px 10px 2px black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.mat-icon[id$="-warning"]{
+  color: red;
+}
+.mat-icon[id$="-warning_amber"]{
+  color: orange;
 }

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-info-extra',
   templateUrl: './info-extra.component.html',
-  styleUrls: ['./info-extra.component.scss']
+  styleUrls: ['./info-extra.component.scss'],
 })
 export class InfoExtraComponent implements OnInit {
+  @Input() idOficina!: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.idOficina = 'norte';
   }
 
+  ngOnInit(): void {}
 }
