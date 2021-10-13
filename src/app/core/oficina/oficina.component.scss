@@ -1,41 +1,25 @@
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
   left: 20vw;
   width: 55vw;
   height: 100vh;
 }
-
-#norte {
-  width: fit-content;
-  position: absolute;
-  left: calc(27.5vw - 75px);
-  top: 1em;
+#divOeste, #divEste{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
-
-#sur {
-  width: fit-content;
-  position: absolute;
-  bottom: 1em;
-  left: calc(27.5vw - 75px);
+#divCentral{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
 }
-
-#plaza {
+.box {
   width: fit-content;
-  position: absolute;
-  left: calc(27.5vw - 75px);
-  top: calc(50% - 75px);
-}
-
-#este {
-  width: fit-content;
-  position: absolute;
-  right: 0px;
-  top: calc(50% - 75px);
-}
-
-#oeste {
-  width: fit-content;
-  position: absolute;
-  left: 0px;
-  top: calc(50% - 75px);
 }
