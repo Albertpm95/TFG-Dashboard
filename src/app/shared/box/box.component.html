@@ -1,14 +1,18 @@
-<div class="container">
-  <h3 id="nombreBox">{{ id }}</h3>
-  <mat-icon *ngIf="warningTemp != ''" id="{{id}}-{{warningTemp}}">{{warningTemp}}</mat-icon><label id="{{id}}-labelTemp">Temperatura: {{ temperaturaActual }}ºC</label><br />
+<div class="container-box" id="{{id}}">
+  <h3 id="nombreBox">{{ nombre }}</h3>
+  <mat-icon id="{{id}}warningTemp">fiber_manual_record</mat-icon><label id="{{id}}-labelTemp">Temperatura: {{
+    temperaturaActual }}ºC</label><br />
 
-  <mat-icon *ngIf="warningHumidity != ''" id="{{id}}-{{warningHumidity}}">{{warningHumidity}}</mat-icon><label id="{{id}}-labelHumidity">Humedad: {{ humedadActual }}%</label><br />
+  <mat-icon id="{{id}}warningHumidity">fiber_manual_record</mat-icon><label id="{{id}}-labelHumidity">Humedad: {{
+    humedadActual }}%</label><br />
 
-  <mat-icon *ngIf="warningDB != ''" id="{{id}}-{{warningDB}}">{{warningDB}}</mat-icon><label id="{{id}}-labelDB">Ruido: {{ ruidoActual }}db</label><br />
+  <mat-icon id="{{id}}warningDB">fiber_manual_record</mat-icon><label id="{{id}}-labelDB">Ruido:
+    {{ ruidoActual }}db</label><br />
 
-  <mat-icon *ngIf="warningLux != ''"id="{{id}}-{{warningLux}}">{{warningLux}}</mat-icon><label id="{{id}}-labelLux">Luminosidad: {{ iluminosidadActual }}lux</label><br />
+  <mat-icon id="{{id}}warningLux">fiber_manual_record</mat-icon><label id="{{id}}-labelLux">Luminosidad: {{
+    iluminosidadActual }}lux</label><br />
 
-  <mat-icon *ngIf="warningAirQuality != ''"id="{{id}}-{{warningAirQuality}}">{{warningAirQuality}}</mat-icon><label id="{{id}}-labelAirQuality">Calidad Aire: {{ calidadAireActual }}</label
-  ><br />
-  <h4>Satisfaccion media: {{ satisfaccionMedia }}</h4>
+  <mat-icon id="{{id}}warningAirQuality">fiber_manual_record</mat-icon><label id="{{id}}-labelAirQuality">Calidad Aire:
+    {{ calidadAireActual }}</label><br />
+  <h4>Confort medio: {{ satisfaccionMedia }}</h4>
 </div>

@@ -1,29 +1,48 @@
-<h2>¿Donde estas?</h2>
-<mat-button-toggle-group name="box" aria-label="Font Style">
-  <mat-button-toggle value="norte">Norte</mat-button-toggle>
-  <mat-button-toggle value="este">Este</mat-button-toggle>
-  <mat-button-toggle value="plaza">Plaza</mat-button-toggle>
-  <mat-button-toggle value="oeste">Oeste</mat-button-toggle>
-  <mat-button-toggle value="sur">Sur</mat-button-toggle>
-  <mat-button-toggle value="fuera">Fuera de la oficina</mat-button-toggle>
-</mat-button-toggle-group>
-<mat-divider></mat-divider>
-<h2>¿Cual es tu sensacion termica?</h2>
-<mat-button-toggle-group name="sensacionTermica" aria-label="Font Style">
-  <mat-button-toggle value="mucho calor">Mucho calor</mat-button-toggle>
-  <mat-button-toggle value="calor">Calor</mat-button-toggle>
-  <mat-button-toggle value="poco calor">Poco calor</mat-button-toggle>
-  <mat-button-toggle value="aceptable">Aceptable</mat-button-toggle>
-  <mat-button-toggle value="poco frio">Poco frio</mat-button-toggle>
-  <mat-button-toggle value="frio">Frio</mat-button-toggle>
-  <mat-button-toggle value="mucho frio">Mucho frio</mat-button-toggle>
-</mat-button-toggle-group>
-<mat-divider></mat-divider>
-<button
-  mat-raised-button
-  color="primary"
-  routerLink="principal"
-  routerLinkActive="active"
->
-  Enviar
-</button>
+<div class="container">
+  <h2>¿Donde estas?</h2>
+  <mat-button-toggle-group name="box" aria-label="Font Style">
+    <mat-button-toggle value="norte">Norte</mat-button-toggle>
+    <mat-button-toggle value="este">Este</mat-button-toggle>
+    <mat-button-toggle value="plaza">Plaza</mat-button-toggle>
+    <mat-button-toggle value="oeste">Oeste</mat-button-toggle>
+    <mat-button-toggle value="sur">Sur</mat-button-toggle>
+    <mat-button-toggle value="fuera">Fuera de la oficina</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-divider></mat-divider>
+  <h2>¿Cual es tu sensacion termica?</h2>
+  <mat-button-toggle-group name="sensacionTermica" aria-label="Font Style">
+    <mat-button-toggle value="mucho calor">Mucho calor</mat-button-toggle>
+    <mat-button-toggle value="calor">Calor</mat-button-toggle>
+    <mat-button-toggle value="poco calor">Poco calor</mat-button-toggle>
+    <mat-button-toggle value="aceptable">Aceptable</mat-button-toggle>
+    <mat-button-toggle value="poco frio">Poco frio</mat-button-toggle>
+    <mat-button-toggle value="frio">Frio</mat-button-toggle>
+    <mat-button-toggle value="mucho frio">Mucho frio</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-divider></mat-divider>
+  <h2>¿Cual es tu confort acustico?</h2>
+  <mat-button-toggle-group name="sensacionTermica" aria-label="Font Style">
+    <mat-button-toggle value="mucho calor">Mucho calor</mat-button-toggle>
+    <mat-button-toggle value="calor">Calor</mat-button-toggle>
+    <mat-button-toggle value="poco calor">Poco calor</mat-button-toggle>
+    <mat-button-toggle value="aceptable">Aceptable</mat-button-toggle>
+    <mat-button-toggle value="poco frio">Poco frio</mat-button-toggle>
+    <mat-button-toggle value="frio">Frio</mat-button-toggle>
+    <mat-button-toggle value="mucho frio">Mucho frio</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-divider></mat-divider>
+  <h2>¿Cual es tu confort luminico?</h2>
+  <mat-button-toggle-group name="sensacionTermica" aria-label="Font Style">
+    <mat-button-toggle value="mucho calor">Mucha luz</mat-button-toggle>
+    <mat-button-toggle value="calor">Calor</mat-button-toggle>
+    <mat-button-toggle value="poco calor">Poco calor</mat-button-toggle>
+    <mat-button-toggle value="aceptable">Aceptable</mat-button-toggle>
+    <mat-button-toggle value="poco frio">Poco frio</mat-button-toggle>
+    <mat-button-toggle value="frio">Frio</mat-button-toggle>
+    <mat-button-toggle value="mucho frio">Muy poca luz</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-divider></mat-divider>
+  <button mat-raised-button color="primary" routerLink="principal" routerLinkActive="active">
+    Enviar
+  </button>
+</div>

@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InfoExtraComponent implements OnInit {
   @Input() idOficina!: string;
+  abierto = false;
 
   constructor() {
     this.idOficina = 'norte';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

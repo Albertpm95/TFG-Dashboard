@@ -13,6 +13,7 @@
   align-items: center;
   height: 100%;
 }
+
 #divCentral{
   display: flex;
   flex-direction: column;
@@ -22,4 +23,5 @@
 }
 .box {
   width: fit-content;
+  border-radius: 15px;
 }

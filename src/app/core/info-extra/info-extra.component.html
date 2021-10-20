@@ -1,14 +1,23 @@
-<div class="container">
+<div class="containerInfoExtra" *ngIf="abierto">
   <div class="titulo">
     <h3>Informacion detallada</h3>
     <mat-icon>close</mat-icon>
   </div>
-  <h3>Oficina {{ idOficina }}</h3>
+
   <div class="detalles">
-    <h4><label>Temperatura exterior:</label> 34<label>ºC</label></h4>
-    <h4>Aire A/C: 27ºC</h4>
-    <h4>Humedad: 50%</h4>
-    <h4>Temperatura relativa: 30º</h4>
+    <h5>Temperatura exterior: 35ºC</h5>
+    <h5>Aire A/C: 27ºC</h5>
+    <h5>Humedad: 50%</h5>
+    <h5>Temperatura relativa: 30º</h5>
     <app-air-quality-details></app-air-quality-details>
   </div>
+  <div id="weatherWidget">
+    <script type='text/javascript'
+      src='http://www.aemet.es/es/eltiempo/prediccion/municipios/launchwidget/valencia-id46250?w=g4p11111111ohmffffffw538z408x4f86d9t95b6e9r1s7n1'></script>
+    <noscript><a target='_blank' style='font-weight: bold;font-size: 1.20em;'
+        href='http://www.aemet.es/es/eltiempo/prediccion/municipios/valencia-id46250'>El Tiempo. Consulte la predicción
+        de
+        la AEMET para València</a></noscript>
+  </div>
+
 </div>
