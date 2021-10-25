@@ -6,12 +6,26 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./info-extra.component.scss'],
 })
 export class InfoExtraComponent implements OnInit {
-  @Input() idOficina!: string;
-  abierto = false;
+  @Input() idBoxFocus!: string;
+
+  temperaturaExteriorActual = 34;
+  temperaturaActualAC = 27;
+  humedadRelativaExterior = 20;
+  boxFocused = "";
+
+  cerrado = false;
 
   constructor() {
-    this.idOficina = 'norte';
+
   }
 
   ngOnInit(): void { }
+
+  cerrar(): void {
+    this.cerrado = true;
+  }
+
+  ngOnChanges(): void {
+    this.boxFocused = this.idBoxFocus;
+  }
 }

@@ -28,26 +28,38 @@ export class OficinaComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  ngAfterViewInit() {
+    const boxes = document.getElementsByClassName('container-box');
+
+    for (var i = 0; i < boxes.length; i++) {
+      let box = document.getElementById(boxes[i].id);
+
+      if (box != null)
+        box.style.backgroundColor = 'white';
+    }
+  }
   abrirDetalles(id: string) {
     const boxes = document.getElementsByClassName('container-box');
 
     this.cambiarFocus(id);
 
     for (var i = 0; i < boxes.length; i++) {
-      if (id != boxes[i].id) {
+
+      if ('container-box-' + id != boxes[i].id) {
         let box = document.getElementById(boxes[i].id);
+
         if (box != null)
           box.style.backgroundColor = 'gray';
       }
       else {
-        let boxFocus = document.getElementById(id);
+        let boxFocus = document.getElementById('container-box-' + id);
         if (boxFocus != null)
           boxFocus.style.backgroundColor = 'white';
       }
 
     }
   }
-  cambiarFocus(id: string) {
+  cambiarFocus(id: string): void {
     this.boxFocus.emit(id);
   }
 }

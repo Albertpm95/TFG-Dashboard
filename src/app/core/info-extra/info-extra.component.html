@@ -1,14 +1,13 @@
-<div class="containerInfoExtra" *ngIf="abierto">
+<div class="container" id="containerInfoExtraID" *ngIf=!cerrado>
   <div class="titulo">
-    <h3>Informacion detallada</h3>
-    <mat-icon>close</mat-icon>
+    <h3>Informacion detallada del box </h3>
+    <mat-icon (click)="cerrar()">close</mat-icon>
   </div>
 
   <div class="detalles">
-    <h5>Temperatura exterior: 35ºC</h5>
-    <h5>Aire A/C: 27ºC</h5>
-    <h5>Humedad: 50%</h5>
-    <h5>Temperatura relativa: 30º</h5>
+    <h5>Temperatura exterior: </h5>
+    <h5>Aire A/C: </h5>
+    <h5>Humedad: </h5>
     <app-air-quality-details></app-air-quality-details>
   </div>
   <div id="weatherWidget">

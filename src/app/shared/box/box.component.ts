@@ -44,14 +44,14 @@ export class BoxComponent implements OnInit {
     if (warningTempIcon != null) {
 
       if (this.temperaturaActual >= 35) {
-        console.log("Rojo")
+
         warningTempIcon.style.display = 'inline';
         warningTempIcon.style.color = 'red';
       }
       else if (this.temperaturaActual >= 30 && this.temperaturaActual < 35) {
         warningTempIcon.style.display = 'inline';
-        warningTempIcon.style.color = 'yellow';
-        console.log("Amarillo")
+        warningTempIcon.style.color = 'orange';
+
       }
       else
         warningTempIcon.style.visibility = 'hidden';
@@ -66,7 +66,7 @@ export class BoxComponent implements OnInit {
       }
       else if (this.ruidoActual >= 40 && this.ruidoActual < 60) {
         warningDBIcon.style.display = 'inline';
-        warningDBIcon.style.color = 'yellow';
+        warningDBIcon.style.color = 'orange';
       }
       else
         warningDBIcon.style.visibility = 'hidden';
@@ -82,7 +82,7 @@ export class BoxComponent implements OnInit {
       }
       else if (this.calidadAireActual == 'Regular') {
         warningAirQualitycon.style.display = 'inline';
-        warningAirQualitycon.style.color = 'yellow';
+        warningAirQualitycon.style.color = 'orange';
       }
       else
         warningAirQualitycon.style.visibility = 'hidden';
@@ -99,7 +99,7 @@ export class BoxComponent implements OnInit {
       }
       else if (this.iluminosidadActual >= 400 && this.iluminosidadActual < 600) {
         warningLuxIcon.style.display = 'inline';
-        warningLuxIcon.style.color = 'yellow';
+        warningLuxIcon.style.color = 'orange';
       }
       else
         warningLuxIcon.style.visibility = 'hidden';
@@ -115,7 +115,7 @@ export class BoxComponent implements OnInit {
       }
       else if (this.ruidoActual >= 30 && this.ruidoActual < 35) {
         warningHumidityIcon.style.display = 'inline';
-        warningHumidityIcon.style.color = 'yellow';
+        warningHumidityIcon.style.color = 'orange';
       }
       else
         warningHumidityIcon.style.visibility = 'hidden';

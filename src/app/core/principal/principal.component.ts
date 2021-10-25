@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-principal',
@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class PrincipalComponent implements OnInit {
   constructor() { }
 
+  idBoxFocus = "";
+
   ngOnInit(): void { }
 
-  cambiarFocus(boxFocus: string) {
-    const infoExtra = document.getElementById("containerInfoExtra")
+  actualizarInfoExtra(id: string): void {
+
+    this.idBoxFocus = id;
+
   }
 }
