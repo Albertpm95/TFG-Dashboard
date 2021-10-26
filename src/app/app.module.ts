@@ -19,6 +19,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatIconModule } from '@angular/material/icon';
     FeedbackComponent,
     BoxComponent,
     AirQualityDetailsComponent,
+    WeatherWidgetComponent,
   ],
   imports: [
     BrowserModule,

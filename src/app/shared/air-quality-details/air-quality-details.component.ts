@@ -20,7 +20,6 @@ export class AirQualityDetailsComponent implements OnInit {
   ngOnChanges(): void {
     if (this.idBoxFocus != null && this.idBoxFocus != undefined) {
       this.load();
-      this.comprobarWarnings();
     }
   }
   ngOnInit(): void {}
@@ -29,10 +28,11 @@ export class AirQualityDetailsComponent implements OnInit {
     if (this.idBoxFocus != null && this.idBoxFocus != undefined) {
       this.load();
     }
+    this.comprobarWarnings();
   }
 
   load(): void {
-    var boxInfo = this.oficina.find((i) => i.idBox === this.idBoxFocus);
+    const boxInfo = this.oficina.find((i) => i.idBox === this.idBoxFocus);
 
     if (boxInfo != undefined) {
       this.boxInfo = boxInfo;
@@ -43,7 +43,7 @@ export class AirQualityDetailsComponent implements OnInit {
     }
   }
 
-  comprobarWarnings(): void {
+  comprobarWarnings() {
     this.warningPM10();
     this.warningPM25();
     this.warningO3();
@@ -51,111 +51,109 @@ export class AirQualityDetailsComponent implements OnInit {
     this.warningSO2();
   }
 
-  warningSO2() {
-    var warningIcon = document.getElementById(
-      this.idBoxFocus + 'warningAzufre'
+  warningSO2(): void {
+    const warningIconSO2 = document.getElementById(
+      this.idBoxFocus + '-warningAzufre'
     );
 
-    if (warningIcon != null) {
-      console.log(warningIcon);
+    if (warningIconSO2 != null) {
       if (
         this.detallesAire.dioxidoAzufre > 50 &&
         this.detallesAire.dioxidoAzufre < 1200
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'red';
+        warningIconSO2.style.display = 'inline';
+        warningIconSO2.style.color = 'red';
       } else if (
         this.detallesAire.dioxidoAzufre >= 36 &&
         this.detallesAire.dioxidoAzufre <= 50
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'orange';
-      } else warningIcon.style.visibility = 'hidden';
+        warningIconSO2.style.display = 'inline';
+        warningIconSO2.style.color = 'orange';
+      } else warningIconSO2.style.visibility = 'hidden';
     }
   }
-  warningNO2() {
-    var warningIcon = document.getElementById(
-      this.idBoxFocus + 'warningNitrogeno'
+  warningNO2(): void {
+    const warningIconNO2 = document.getElementById(
+      this.idBoxFocus + '-warningNitrogeno'
     );
 
-    if (warningIcon != null) {
-      console.log(warningIcon);
+    if (warningIconNO2 != null) {
       if (
         this.detallesAire.dioxidoNitrogeno > 200 &&
         this.detallesAire.dioxidoNitrogeno <= 1000
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'red';
+        warningIconNO2.style.display = 'inline';
+        warningIconNO2.style.color = 'red';
       } else if (
         this.detallesAire.dioxidoNitrogeno > 100 &&
         this.detallesAire.dioxidoNitrogeno <= 200
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'orange';
-      } else warningIcon.style.visibility = 'hidden';
+        warningIconNO2.style.display = 'inline';
+        warningIconNO2.style.color = 'orange';
+      } else warningIconNO2.style.visibility = 'hidden';
     }
   }
 
-  warningO3() {
-    var warningIcon = document.getElementById(this.idBoxFocus + 'warningOzono');
+  warningO3(): void {
+    const warningIconO3 = document.getElementById(
+      this.idBoxFocus + '-warningOzono'
+    );
 
-    if (warningIcon != null) {
-      console.log(warningIcon);
+    if (warningIconO3 != null) {
       if (this.detallesAire.ozono > 180 && this.detallesAire.ozono < 600) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'red';
+        warningIconO3.style.display = 'inline';
+        warningIconO3.style.color = 'red';
       } else if (
         this.detallesAire.ozono > 121 &&
         this.detallesAire.ozono <= 180
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'orange';
-      } else warningIcon.style.visibility = 'hidden';
+        warningIconO3.style.display = 'inline';
+        warningIconO3.style.color = 'orange';
+      } else warningIconO3.style.visibility = 'hidden';
     }
   }
 
-  warningPM10() {
-    var warningIcon = document.getElementById(
-      this.idBoxFocus + 'warningRespirables'
+  warningPM10(): void {
+    const warningIconPM10 = document.getElementById(
+      this.idBoxFocus + '-warningRespirables'
     );
-    console.log(this.idBoxFocus + 'warningRespirables');
 
-    if (warningIcon != null) {
-      console.log(warningIcon);
+    if (warningIconPM10 != null) {
       if (
         this.detallesAire.particulasRespirables > 50 &&
         this.detallesAire.particulasRespirables < 1200
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'red';
+        warningIconPM10.style.display = 'inline';
+        warningIconPM10.style.color = 'red';
       } else if (
         this.detallesAire.particulasRespirables >= 36 &&
         this.detallesAire.particulasRespirables <= 50
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'orange';
-      } else warningIcon.style.visibility = 'hidden';
+        warningIconPM10.style.display = 'inline';
+        warningIconPM10.style.color = 'orange';
+      } else warningIconPM10.style.visibility = 'hidden';
     }
   }
 
-  warningPM25() {
-    var warningIcon = document.getElementById(this.idBoxFocus + 'warningFinas');
+  warningPM25(): void {
+    const warningIconPM25 = document.getElementById(
+      this.idBoxFocus + '-warningFinas'
+    );
 
-    if (warningIcon != null) {
+    if (warningIconPM25 != null) {
       if (
         this.detallesAire.particulasFinas > 25 &&
         this.detallesAire.particulasFinas < 800
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'red';
+        warningIconPM25.style.display = 'inline';
+        warningIconPM25.style.color = 'red';
       } else if (
         this.detallesAire.particulasFinas >= 21 &&
         this.detallesAire.particulasFinas <= 25
       ) {
-        warningIcon.style.display = 'inline';
-        warningIcon.style.color = 'orange';
-      } else warningIcon.style.visibility = 'hidden';
+        warningIconPM25.style.display = 'inline';
+        warningIconPM25.style.color = 'orange';
+      } else warningIconPM25.style.visibility = 'hidden';
     }
-    return warningIcon;
   }
 }

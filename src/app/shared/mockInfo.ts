@@ -10,7 +10,7 @@ export const Oficina: BoxInfo[] = [
     ruidoActual: 10,
     temperaturaActual: 10,
     detallesAire: {
-      dioxidoAzufre: 100,
+      dioxidoAzufre: 0,
       dioxidoNitrogeno: 110,
       ozono: 120,
       particulasFinas: 130,
@@ -26,7 +26,7 @@ export const Oficina: BoxInfo[] = [
     ruidoActual: 33,
     temperaturaActual: 23,
     detallesAire: {
-      dioxidoAzufre: 233,
+      dioxidoAzufre: 101,
       dioxidoNitrogeno: 223,
       ozono: 33,
       particulasFinas: 230,
@@ -42,7 +42,7 @@ export const Oficina: BoxInfo[] = [
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {
-      dioxidoAzufre: 500,
+      dioxidoAzufre: 201,
       dioxidoNitrogeno: 200,
       ozono: 100,
       particulasFinas: 600,
@@ -58,7 +58,7 @@ export const Oficina: BoxInfo[] = [
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {
-      dioxidoAzufre: 500,
+      dioxidoAzufre: 351,
       dioxidoNitrogeno: 200,
       ozono: 100,
       particulasFinas: 600,
@@ -74,7 +74,7 @@ export const Oficina: BoxInfo[] = [
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {
-      dioxidoAzufre: 700,
+      dioxidoAzufre: 501,
       dioxidoNitrogeno: 400,
       ozono: 100,
       particulasFinas: 800,

@@ -4,19 +4,9 @@
     <mat-icon (click)="cerrar()">close</mat-icon>
   </div>
 
-  <div class="detalles">
-    <h5>Temperatura exterior: </h5>
-    <h5>Aire A/C: </h5>
-    <h5>Humedad: </h5>
-    <app-air-quality-details [idBoxFocus]="idBoxFocus"></app-air-quality-details>
-  </div>
-  <div id="weatherWidget">
-    <script type='text/javascript'
-      src='http://www.aemet.es/es/eltiempo/prediccion/municipios/launchwidget/valencia-id46250?w=g4p11111111ohmffffffw538z408x4f86d9t95b6e9r1s7n1'></script>
-    <noscript><a target='_blank' style='font-weight: bold;font-size: 1.20em;'
-        href='http://www.aemet.es/es/eltiempo/prediccion/municipios/valencia-id46250'>El Tiempo. Consulte la predicción
-        de
-        la AEMET para València</a></noscript>
-  </div>
+  <mat-divider></mat-divider>
+
+  <app-air-quality-details [idBoxFocus]="idBoxFocus"></app-air-quality-details>
+
 
 </div>
