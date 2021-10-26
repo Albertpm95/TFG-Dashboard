@@ -1,18 +1,23 @@
 <div class="container">
-    <div *ngIf="weatherInfo != null">
-        <label>{{weatherInfo.name}}</label><br />
-        <label *ngFor="let weather of extras">Descripcion: {{weather.description}} Tiempo:
-            {{weather.main}}</label><br />
-        <label>Longitud: {{weatherInfo.coord.lon}} Latitud: {{weatherInfo.coord.lat}}</label><br />
-        <label>Temperatura actual: {{weatherInfo.main.temp}}ºC</label><br />
-        <label>Sensacion termica: {{weatherInfo.main.feels_like}}ºC</label><br />
-        <label>Presion atmosferica: {{weatherInfo.main.pressure}}hPa</label><br />
-        <label>Humedad: {{weatherInfo.main.humidity}}%</label><br />
-        <label>Temperatura minima: {{weatherInfo.main.temp_min}}ºC</label> <br />
-        <label>Temperatura maxima: {{weatherInfo.main.temp_max}}ºC</label><br />
-        <label>Velocidad del viento: {{weatherInfo.wind.speed}}m/s</label><br />
-        <label>Direccion del viento: {{weatherInfo.wind.deg}}º</label><br />
-        <label>Rachas de viento: {{weatherInfo.wind.gust}}m/s</label><br />
-        <label>Nubes: {{weatherInfo.clouds.all}}%</label><br />
-    </div>
+  <div *ngIf="weatherInfo != null">
+    <label>{{ weatherInfo.name }}</label
+    ><br />
+    <label *ngFor="let weather of extras"
+      >Descripcion: {{ weather.description }} Tiempo: {{ weather.main }}</label
+    ><br />
+    <label
+      >Longitud: {{ weatherInfo.coord.lon }} Latitud:
+      {{ weatherInfo.coord.lat }}</label
+    ><br />
+    <label>Temperatura actual: {{ weatherInfo.main.temp }}ºC</label><br />
+    <label>Sensacion termica: {{ weatherInfo.main.feels_like }}ºC</label><br />
+    <label>Presion atmosferica: {{ weatherInfo.main.pressure }}hPa</label><br />
+    <label>Humedad: {{ weatherInfo.main.humidity }}%</label><br />
+    <label>Temperatura minima: {{ weatherInfo.main.temp_min }}ºC</label> <br />
+    <label>Temperatura maxima: {{ weatherInfo.main.temp_max }}ºC</label><br />
+    <label>Velocidad del viento: {{ weatherInfo.wind.speed }}m/s</label><br />
+    <label>Direccion del viento: {{ weatherInfo.wind.deg }}º</label><br />
+    <label>Rachas de viento: {{ weatherInfo.wind.gust }}m/s</label><br />
+    <label>Nubes: {{ weatherInfo.clouds.all }}%</label><br />
+  </div>
 </div>
