@@ -1,12 +1,18 @@
-import { detallesAire } from "./detallesAire"
+import { DetallesAire } from './detallesAire';
 
-export interface BoxInfo {
-    idBox: string
-    tituloBox: string
-    temperaturaActual: number
-    humedadActual: number
-    ruidoActual: number
-    luminosidadActual: number
-    calidadAireActual: "muy mala" | "mala" | "regular" | "buena" | "muy buena" | "sin datos"
-    detallesAire: detallesAire
+export class BoxInfo {
+  idBox!: string;
+  tituloBox!: string;
+  temperaturaActual!: number;
+  humedadActual!: number;
+  ruidoActual!: number;
+  luminosidadActual!: number;
+  calidadAireActual!:
+    | 'muy mala'
+    | 'mala'
+    | 'regular'
+    | 'buena'
+    | 'muy buena'
+    | 'sin datos';
+  detallesAire!: DetallesAire;
 }

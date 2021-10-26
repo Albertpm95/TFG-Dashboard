@@ -1,6 +1,6 @@
 <div class="container">
   <app-qr></app-qr>
   <div id="titulo">SENTIRE ///</div>
-  <app-oficina (boxFocus)="actualizarInfoExtra($event)"></app-oficina>
-  <app-info-extra [idBoxFocus]="idBoxFocus"></app-info-extra>
+  <app-oficina [cerrado]="cerrado" (boxFocus)="actualizarInfoExtra($event)"></app-oficina>
+  <app-info-extra [idBoxFocus]="idBoxFocus" (cerrado)="cerrarInfoExtra($event)"></app-info-extra>
 </div>

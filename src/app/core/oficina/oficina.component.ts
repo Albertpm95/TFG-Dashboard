@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-oficina',
@@ -7,26 +7,32 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class OficinaComponent implements OnInit {
   @Output() boxFocus = new EventEmitter<string>();
+  @Input() cerrado!: boolean;
 
   norte = {
-    id: 'boxNorte', nombre: 'OFICINA NORTE'
+    id: 'boxNorte',
+    nombre: 'OFICINA NORTE',
   };
   sur = {
-    id: 'boxSur', nombre: 'OFICINA SUR'
+    id: 'boxSur',
+    nombre: 'OFICINA SUR',
   };
   este = {
-    id: 'boxEste', nombre: 'OFICINA ESTE'
+    id: 'boxEste',
+    nombre: 'OFICINA ESTE',
   };
   oeste = {
-    id: 'boxOeste', nombre: 'OFICINA OESTE'
+    id: 'boxOeste',
+    nombre: 'OFICINA OESTE',
   };
   plaza = {
-    id: 'boxPlaza', nombre: 'PLAZA'
+    id: 'boxPlaza',
+    nombre: 'PLAZA',
   };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
     const boxes = document.getElementsByClassName('container-box');
@@ -34,7 +40,7 @@ export class OficinaComponent implements OnInit {
     for (var i = 0; i < boxes.length; i++) {
       let box = document.getElementById(boxes[i].id);
 
-      if (box != null)
+      if (box != null || (this.cerrado && box != null))
         box.style.backgroundColor = 'white';
     }
   }
@@ -44,19 +50,23 @@ export class OficinaComponent implements OnInit {
     this.cambiarFocus(id);
 
     for (var i = 0; i < boxes.length; i++) {
-
       if ('container-box-' + id != boxes[i].id) {
         let box = document.getElementById(boxes[i].id);
 
-        if (box != null)
-          box.style.backgroundColor = 'gray';
-      }
-      else {
+        if (box != null) box.style.backgroundColor = 'gray';
+      } else {
         let boxFocus = document.getElementById('container-box-' + id);
-        if (boxFocus != null)
-          boxFocus.style.backgroundColor = 'white';
+        if (boxFocus != null) boxFocus.style.backgroundColor = 'white';
       }
-
+    }
+  }
+  ngOnChanges() {
+    if (this.cerrado == true) {
+      const boxes = document.getElementsByClassName('container-box');
+      for (var i = 0; i < boxes.length; i++) {
+        let boxFocus = document.getElementById(boxes[i].id);
+        if (boxFocus != null) boxFocus.style.backgroundColor = 'white';
+      }
     }
   }
   cambiarFocus(id: string): void {

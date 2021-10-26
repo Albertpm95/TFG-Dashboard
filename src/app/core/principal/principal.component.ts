@@ -6,15 +6,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss'],
 })
 export class PrincipalComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  idBoxFocus = "";
+  idBoxFocus = '';
+  cerrado!: boolean;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   actualizarInfoExtra(id: string): void {
-
     this.idBoxFocus = id;
-
+    this.cerrado = false;
+  }
+  cerrarInfoExtra(cerrado: boolean): void {
+    this.cerrado = cerrado;
   }
 }
