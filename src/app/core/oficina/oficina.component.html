@@ -1,27 +1,18 @@
 <div class="container">
   <div id="divOeste">
-    <app-box [idBox]="oeste.id" [nombre]="oeste.nombre" class="box" id="boxOeste" (click)="cambiarFocus('boxOeste')"
-      (click)="abrirDetalles('boxOeste')">
+    <app-box [idBox]="oeste.id" [nombre]="oeste.nombre" class="box" id="boxOeste" (>
     </app-box>
   </div>
   <div id="divCentral">
-    <app-box [idBox]="norte.id" [nombre]="norte.nombre" class="box" id="boxNorte" (click)="cambiarFocus('boxNorte')"
-      (click)="abrirDetalles('boxNorte')">
+    <app-box [idBox]="norte.id" [nombre]="norte.nombre" class="box" id="boxNorte">
     </app-box>
-    <div>
-      <app-box [idBox]="plaza.id" [nombre]="plaza.nombre" class="box" id="boxPlaza" (click)="cambiarFocus('boxPlaza')"
-        (click)="abrirDetalles('boxPlaza')">
-      </app-box>
-    </div>
 
-    <app-box [idBox]="sur.id" [nombre]="sur.nombre" class="box" id="boxSur" (click)="cambiarFocus('boxSur')"
-      (click)="abrirDetalles('boxSur')">
+    <app-box [idBox]="sur.id" [nombre]="sur.nombre" class="box" id="boxSur">
     </app-box>
   </div>
 
   <div id="divEste">
-    <app-box [idBox]="este.id" [nombre]="este.nombre" class="box" id="boxEste" (click)="cambiarFocus('boxEste')"
-      (click)="abrirDetalles('boxEste')">
+    <app-box [idBox]="este.id" [nombre]="este.nombre" class="box" id="boxEste">
     </app-box>
   </div>
 

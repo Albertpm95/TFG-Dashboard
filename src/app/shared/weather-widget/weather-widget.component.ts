@@ -39,6 +39,7 @@ export class WeatherWidgetComponent implements OnInit {
         if (data != null && data != undefined) this.weatherInfo = data;
 
         this.extras = data.weather;
+        console.log(this.extras);
       });
   }
   getForecast() {
@@ -48,6 +49,8 @@ export class WeatherWidgetComponent implements OnInit {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         if (data != null && data != undefined) this.forecast = data;
+
+        console.log(this.forecast);
       });
   }
 }

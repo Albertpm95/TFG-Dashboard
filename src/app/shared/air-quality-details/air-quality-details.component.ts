@@ -9,19 +9,14 @@ import { Oficina } from '../mockInfo';
   styleUrls: ['./air-quality-details.component.scss'],
 })
 export class AirQualityDetailsComponent implements OnInit {
-  @Input() idBoxFocus!: string;
-
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
   detallesAire: DetallesAire = new DetallesAire();
+  idBoxFocus = 'boxPlaza';
 
   constructor() {}
 
-  ngOnChanges(): void {
-    if (this.idBoxFocus != null && this.idBoxFocus != undefined) {
-      this.load();
-    }
-  }
+  ngOnChanges(): void {}
   ngOnInit(): void {}
 
   ngAfterViewInit() {
@@ -29,7 +24,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   load(): void {
-    var boxInfo = this.oficina.find((i) => i.idBox === this.idBoxFocus);
+    var boxInfo = this.oficina.find((i) => i.idBox === 'boxPlaza');
 
     if (boxInfo != null) {
       this.boxInfo = boxInfo;
@@ -50,9 +45,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningSO2() {
-    var warningIconSO2 = document.getElementById(
-      this.idBoxFocus + 'warningAzufre'
-    );
+    var warningIconSO2 = document.getElementById('boxPlazaWarningAzufre');
     if (warningIconSO2 != null) {
       if (
         this.detallesAire.dioxidoAzufre > 50 &&
@@ -68,9 +61,7 @@ export class AirQualityDetailsComponent implements OnInit {
     }
   }
   warningNO2() {
-    var warningIconNO2 = document.getElementById(
-      this.idBoxFocus + 'warningNitrogeno'
-    );
+    var warningIconNO2 = document.getElementById('boxPlazaWarningNitrogeno');
 
     if (warningIconNO2 != null) {
       if (
@@ -88,9 +79,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningO3() {
-    var warningIconO3 = document.getElementById(
-      this.idBoxFocus + 'warningOzono'
-    );
+    var warningIconO3 = document.getElementById('boxPlazaWarningOzono');
 
     if (warningIconO3 != null) {
       if (this.detallesAire.ozono > 180 && this.detallesAire.ozono < 600)
@@ -102,9 +91,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningPM10() {
-    var warningIconPM10 = document.getElementById(
-      this.idBoxFocus + 'warningRespirables'
-    );
+    var warningIconPM10 = document.getElementById('boxPlazaWarningRespirables');
 
     if (warningIconPM10 != null) {
       if (
@@ -122,9 +109,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningPM25() {
-    var warningIconPM25 = document.getElementById(
-      this.idBoxFocus + 'warningFinas'
-    );
+    var warningIconPM25 = document.getElementById('boxPlazaWarningFinas');
 
     if (warningIconPM25 != null) {
       if (

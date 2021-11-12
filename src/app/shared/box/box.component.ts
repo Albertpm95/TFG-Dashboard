@@ -14,6 +14,7 @@ export class BoxComponent implements OnInit {
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
   satisfaccionMedia!: string;
+
   constructor() {}
 
   ngOnInit() {
@@ -44,7 +45,7 @@ export class BoxComponent implements OnInit {
   calcularSatisfaccionMedia(): void {}
 
   warningTemp() {
-    var warningTempIcon = document.getElementById(this.idBox + 'warningTemp');
+    var warningTempIcon = document.getElementById(this.idBox + '-warningTemp');
 
     if (warningTempIcon != null) {
       if (this.boxInfo.temperaturaActual >= 35)
@@ -58,8 +59,8 @@ export class BoxComponent implements OnInit {
     }
   }
 
-  warningDB() {
-    var warningDBIcon = document.getElementById(this.idBox + 'warningDB');
+  warningDB(): void {
+    var warningDBIcon = document.getElementById(this.idBox + '-warningDB');
     if (warningDBIcon != null) {
       if (this.boxInfo.ruidoActual >= 60) warningDBIcon.style.color = 'red';
       else if (this.boxInfo.ruidoActual >= 40 && this.boxInfo.ruidoActual < 60)
@@ -68,13 +69,16 @@ export class BoxComponent implements OnInit {
     }
   }
 
-  warningAirQuality() {
+  warningAirQuality(): void {
     var warningAirQualitycon = document.getElementById(
-      this.idBox + 'warningAirQuality'
+      this.idBox + '-warningAirQuality'
     );
 
     if (warningAirQualitycon != null) {
-      if (this.boxInfo.calidadAireActual == 'mala')
+      if (
+        this.boxInfo.calidadAireActual == 'mala' ||
+        this.boxInfo.calidadAireActual == 'muy mala'
+      )
         warningAirQualitycon.style.color = 'red';
       else if (this.boxInfo.calidadAireActual == 'regular')
         warningAirQualitycon.style.color = 'orange';
@@ -84,7 +88,7 @@ export class BoxComponent implements OnInit {
 
   warningHumidity() {
     var warningHumidityIcon = document.getElementById(
-      this.idBox + 'warningHumidity'
+      this.idBox + '-warningHumidity'
     );
 
     if (warningHumidityIcon != null) {

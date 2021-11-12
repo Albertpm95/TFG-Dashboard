@@ -8,16 +8,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PrincipalComponent implements OnInit {
   constructor() {}
 
-  idBoxFocus = '';
-  cerrado!: boolean;
-
   ngOnInit(): void {}
-
-  actualizarInfoExtra(id: string): void {
-    this.idBoxFocus = id;
-    this.cerrado = false;
-  }
-  cerrarInfoExtra(cerrado: boolean): void {
-    this.cerrado = cerrado;
-  }
 }

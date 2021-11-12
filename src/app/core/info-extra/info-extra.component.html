@@ -1,12 +1,8 @@
-<div class="container" id="containerInfoExtraID" *ngIf=!panelCerrado>
-  <div class="titulo">
-    <h3>Informacion detallada de {{boxInfo.tituloBox}}</h3>
-    <mat-icon (click)="cerrar()">close</mat-icon>
-  </div>
+<div class="container" id="containerInfoExtraID">
+  <h3>Informacion detallada</h3>
 
   <mat-divider></mat-divider>
 
-  <app-air-quality-details [idBoxFocus]="idBoxFocus"></app-air-quality-details>
-
+  <app-air-quality-details></app-air-quality-details>
 
 </div>
