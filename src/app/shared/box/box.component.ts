@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Oficina } from '../mockInfo';
 import { BoxInfo } from '../boxInfo';
+import { Oficina } from '../mockInfo';
 
 @Component({
   selector: 'app-box',
@@ -16,7 +16,7 @@ export class BoxComponent implements OnInit {
   satisfaccionMedia!: string;
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.load();
   }
 
@@ -24,7 +24,7 @@ export class BoxComponent implements OnInit {
     this.load();
   }
 
-  load(): void {
+  load() {
     let boxInfo = this.oficina.find((i) => i.idBox === this.idBox);
 
     if (boxInfo != null) {
@@ -34,93 +34,65 @@ export class BoxComponent implements OnInit {
     this.comprobarWarnings();
   }
 
-  comprobarWarnings(): void {
+  comprobarWarnings() {
     this.warningTemp();
     this.warningDB();
     this.warningHumidity();
-    this.warningLux();
     this.warningAirQuality();
   }
+
   calcularSatisfaccionMedia(): void {}
 
   warningTemp() {
     var warningTempIcon = document.getElementById(this.idBox + 'warningTemp');
 
     if (warningTempIcon != null) {
-      if (this.boxInfo.temperaturaActual >= 35) {
-        warningTempIcon.style.display = 'inline';
+      if (this.boxInfo.temperaturaActual >= 35)
         warningTempIcon.style.color = 'red';
-      } else if (
+      else if (
         this.boxInfo.temperaturaActual >= 30 &&
         this.boxInfo.temperaturaActual < 35
-      ) {
-        warningTempIcon.style.display = 'inline';
+      )
         warningTempIcon.style.color = 'orange';
-      } else warningTempIcon.style.visibility = 'hidden';
+      else warningTempIcon.style.color = 'green';
     }
   }
+
   warningDB() {
     var warningDBIcon = document.getElementById(this.idBox + 'warningDB');
     if (warningDBIcon != null) {
-      if (this.boxInfo.ruidoActual >= 60) {
-        warningDBIcon.style.display = 'inline';
-        warningDBIcon.style.color = 'red';
-      } else if (
-        this.boxInfo.ruidoActual >= 40 &&
-        this.boxInfo.ruidoActual < 60
-      ) {
-        warningDBIcon.style.display = 'inline';
+      if (this.boxInfo.ruidoActual >= 60) warningDBIcon.style.color = 'red';
+      else if (this.boxInfo.ruidoActual >= 40 && this.boxInfo.ruidoActual < 60)
         warningDBIcon.style.color = 'orange';
-      } else warningDBIcon.style.visibility = 'hidden';
+      else warningDBIcon.style.color = 'green';
     }
   }
+
   warningAirQuality() {
     var warningAirQualitycon = document.getElementById(
       this.idBox + 'warningAirQuality'
     );
 
     if (warningAirQualitycon != null) {
-      if (this.boxInfo.calidadAireActual == 'mala') {
-        warningAirQualitycon.style.display = 'inline';
+      if (this.boxInfo.calidadAireActual == 'mala')
         warningAirQualitycon.style.color = 'red';
-      } else if (this.boxInfo.calidadAireActual == 'regular') {
-        warningAirQualitycon.style.display = 'inline';
+      else if (this.boxInfo.calidadAireActual == 'regular')
         warningAirQualitycon.style.color = 'orange';
-      } else warningAirQualitycon.style.visibility = 'hidden';
+      else warningAirQualitycon.style.color = 'green';
     }
   }
-  warningLux() {
-    var warningLuxIcon = document.getElementById(this.idBox + 'warningLux');
 
-    if (warningLuxIcon != null) {
-      if (this.boxInfo.luminosidadActual >= 600) {
-        warningLuxIcon.style.display = 'inline';
-        warningLuxIcon.style.color = 'red';
-      } else if (
-        this.boxInfo.luminosidadActual >= 400 &&
-        this.boxInfo.luminosidadActual < 600
-      ) {
-        warningLuxIcon.style.display = 'inline';
-        warningLuxIcon.style.color = 'orange';
-      } else warningLuxIcon.style.visibility = 'hidden';
-    }
-  }
   warningHumidity() {
     var warningHumidityIcon = document.getElementById(
       this.idBox + 'warningHumidity'
     );
 
     if (warningHumidityIcon != null) {
-      if (this.boxInfo.ruidoActual >= 35) {
-        warningHumidityIcon.style.display = 'inline';
+      if (this.boxInfo.ruidoActual >= 35)
         warningHumidityIcon.style.color = 'red';
-      } else if (
-        this.boxInfo.ruidoActual >= 30 &&
-        this.boxInfo.ruidoActual < 35
-      ) {
-        warningHumidityIcon.style.display = 'inline';
+      else if (this.boxInfo.ruidoActual >= 30 && this.boxInfo.ruidoActual < 35)
         warningHumidityIcon.style.color = 'orange';
-      } else warningHumidityIcon.style.visibility = 'hidden';
+      else warningHumidityIcon.style.color = 'green';
     }
   }
 }

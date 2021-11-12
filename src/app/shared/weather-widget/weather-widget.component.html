@@ -1,23 +1,34 @@
 <div class="container">
   <div *ngIf="weatherInfo != null">
-    <label>{{ weatherInfo.name }}</label
-    ><br />
-    <label *ngFor="let weather of extras"
-      >Descripcion: {{ weather.description }} Tiempo: {{ weather.main }}</label
-    ><br />
-    <label
-      >Longitud: {{ weatherInfo.coord.lon }} Latitud:
-      {{ weatherInfo.coord.lat }}</label
-    ><br />
-    <label>Temperatura actual: {{ weatherInfo.main.temp }}ºC</label><br />
-    <label>Sensacion termica: {{ weatherInfo.main.feels_like }}ºC</label><br />
-    <label>Presion atmosferica: {{ weatherInfo.main.pressure }}hPa</label><br />
-    <label>Humedad: {{ weatherInfo.main.humidity }}%</label><br />
-    <label>Temperatura minima: {{ weatherInfo.main.temp_min }}ºC</label> <br />
-    <label>Temperatura maxima: {{ weatherInfo.main.temp_max }}ºC</label><br />
-    <label>Velocidad del viento: {{ weatherInfo.wind.speed }}m/s</label><br />
-    <label>Direccion del viento: {{ weatherInfo.wind.deg }}º</label><br />
-    <label>Rachas de viento: {{ weatherInfo.wind.gust }}m/s</label><br />
-    <label>Nubes: {{ weatherInfo.clouds.all }}%</label><br />
+    <label id="labelCiudad"><b>{{ weatherInfo.name }}</b></label><br />
+
+    <mat-divider></mat-divider>
+
+    <label *ngFor="let weather of extras"><b>Descripcion:</b> {{ weather.description }}</label><br />
+
+    <label><b>Temperatura actual:</b> {{ weatherInfo.main.temp }}ºC</label><br />
+    <label><b>Sensacion termica:</b> {{ weatherInfo.main.feels_like }}ºC</label><br />
+
+    <mat-divider></mat-divider>
+
+    <label><b>Presion atmosferica:</b> {{ weatherInfo.main.pressure }}hPa</label><br />
+    <label><b>Humedad:</b> {{ weatherInfo.main.humidity }}%</label><br />
+
+    <mat-divider></mat-divider>
+
+    <label><b>Velocidad del viento:</b> {{ weatherInfo.wind.speed }}m/s</label><br />
+    <label><b>Direccion del viento:</b> {{ weatherInfo.wind.deg }}º</label><br />
+    <label><b>Rachas de viento:</b> {{ weatherInfo.wind.gust }}m/s</label><br />
+
+    <mat-divider></mat-divider>
+
+    <label><b>Nubes:</b> {{ weatherInfo.clouds.all }}%</label><br />
+
+
+    <mat-divider></mat-divider>
+
+    <label>Proximos 3 dias:</label>
+    <p>{{forecast}}</p>
+
+    <label><b>Ultima actualizacion:</b></label>
   </div>
-</div>

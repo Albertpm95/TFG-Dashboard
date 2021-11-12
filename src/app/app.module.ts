@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.c
     MatButtonToggleModule,
     MatDividerModule,
     MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

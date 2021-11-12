@@ -6,7 +6,7 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Oficina Oeste',
     calidadAireActual: 'muy buena',
     humedadActual: 10,
-    luminosidadActual: 100,
+
     ruidoActual: 10,
     temperaturaActual: 10,
     detallesAire: {
@@ -22,7 +22,7 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Oficina Norte',
     calidadAireActual: 'mala',
     humedadActual: 22,
-    luminosidadActual: 202,
+
     ruidoActual: 33,
     temperaturaActual: 23,
     detallesAire: {
@@ -38,7 +38,7 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Plaza',
     calidadAireActual: 'buena',
     humedadActual: 50,
-    luminosidadActual: 500,
+
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {
@@ -54,7 +54,6 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Oficina Sur',
     calidadAireActual: 'sin datos',
     humedadActual: 50,
-    luminosidadActual: 500,
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {
@@ -70,7 +69,6 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Oficina Este',
     calidadAireActual: 'regular',
     humedadActual: 50,
-    luminosidadActual: 600,
     ruidoActual: 30,
     temperaturaActual: 30,
     detallesAire: {

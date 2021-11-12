@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@700&family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@700&family=Source+Sans+Pro&display=swap");
 html,
 body {
   height: 100%;
@@ -9,30 +9,37 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-h1{
+h1 {
   font-size: 40px !important;
   color: white;
-  font-family: 'Saira Semi Condensed', sans-serif !important;
+  font-family: "Saira Semi Condensed", sans-serif !important;
+}
+h2 {
+  font-size: 30px !important;
+  font-family: "Saira Semi Condensed", sans-serif !important;
 }
 h3 {
-  font-size: 26px !important;
-  font-family: 'Saira Semi Condensed', sans-serif !important;
+  font-size: 25px !important;
+  font-family: "Saira Semi Condensed", sans-serif !important;
 }
-h4{
-  font-size: 23px !important;
-  font-family: 'Saira Semi Condensed', sans-serif !important;
-}
-h5{
+h4 {
   font-size: 20px !important;
-  font-family: 'Saira Semi Condensed', sans-serif !important;
+  font-family: "Saira Semi Condensed", sans-serif !important;
 }
-label{
+h5 {
+  font-size: 15px !important;
+  font-family: "Saira Semi Condensed", sans-serif !important;
+}
+label {
+  font-size: 20px !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+p {
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+.mat-icon {
   font-size: 20px;
-  font-family: 'Source Sans Pro', sans-serif !important; 
 }
-p{
-  font-family: 'Source Sans Pro', sans-serif !important;
-}
-.mat-icon{
-  font-size: 20px;
-}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

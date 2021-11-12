@@ -9,35 +9,31 @@
     <mat-button-toggle value="fuera">Fuera de la oficina</mat-button-toggle>
   </mat-button-toggle-group>
   <mat-divider></mat-divider>
-  <h2>¿Cual es tu sensacion termica?</h2>
-  <mat-button-toggle-group [(ngModel)]="sensacionTermica" name="sensacionTermica" aria-label="Font Style">
-    <mat-button-toggle value="-3">Mucho calor</mat-button-toggle>
-    <mat-button-toggle value="-2">Calor</mat-button-toggle>
-    <mat-button-toggle value="-1">Poco calor</mat-button-toggle>
-    <mat-button-toggle value="0">Aceptable</mat-button-toggle>
-    <mat-button-toggle value="1">Poco frio</mat-button-toggle>
-    <mat-button-toggle value="2">Frio</mat-button-toggle>
-    <mat-button-toggle value="3">Mucho frio</mat-button-toggle>
+  <h2>Valora del 1 al 5 tu sensación térmica.</h2>
+  Mala <mat-button-toggle-group [(ngModel)]="sensacionTermica" name="sensacionTermica">
+    <mat-button-toggle value="0">1</mat-button-toggle>
+    <mat-button-toggle value="1">2</mat-button-toggle>
+    <mat-button-toggle value="2">3</mat-button-toggle>
+    <mat-button-toggle value="3">4</mat-button-toggle>
+    <mat-button-toggle value="4">5</mat-button-toggle>
+  </mat-button-toggle-group> Buena
+  <mat-divider></mat-divider>
+  <h2>Valora del 1 al 5 tu confort acustico.</h2>
+  <mat-button-toggle-group [(ngModel)]="comfortActustico" name="comfortActustico">
+    <mat-button-toggle value="0">1</mat-button-toggle>
+    <mat-button-toggle value="1">2</mat-button-toggle>
+    <mat-button-toggle value="2">3</mat-button-toggle>
+    <mat-button-toggle value="3">4</mat-button-toggle>
+    <mat-button-toggle value="4">5</mat-button-toggle>
   </mat-button-toggle-group>
   <mat-divider></mat-divider>
-  <h2>¿Cual es tu confort acustico?</h2>
-  <mat-button-toggle-group [(ngModel)]="comfortActustico" name="comfortActustico" aria-label="Font Style">
-    <mat-button-toggle value="-3">Demasiado ruido molesto</mat-button-toggle>
-    <mat-button-toggle value="-2">Un poco ruido molesto</mat-button-toggle>
-    <mat-button-toggle value="-1">Algo de ruido</mat-button-toggle>
-    <mat-button-toggle value="0">Silencio</mat-button-toggle>
-  </mat-button-toggle-group>
-  <mat-divider></mat-divider>
-  <h2>¿Cual es tu confort luminico?</h2>
-  <mat-button-toggle-group [(ngModel)]="comfortLuminico" name="comfortLuminico" aria-label="Font Style">
-    <mat-button-toggle value="-3">Demasiada luz natural</mat-button-toggle>
-    <mat-button-toggle value="-1">Buena luz natural</mat-button-toggle>
-    <mat-button-toggle value="-2">Poca luz natural</mat-button-toggle>
-    <mat-button-toggle value="0">Luz adecuada</mat-button-toggle>
-    <mat-button-toggle value="2">Poca luz artificial</mat-button-toggle>
-    <mat-button-toggle value="1">Buena luz artificial</mat-button-toggle>
-    <mat-button-toggle value="3">Demasiada luz artificial</mat-button-toggle>
-
+  <h2>Valora del 1 al 5 es tu confort luminico.</h2>
+  <mat-button-toggle-group [(ngModel)]="comfortLuminico" name="comfortLuminico">
+    <mat-button-toggle value="0">1</mat-button-toggle>
+    <mat-button-toggle value="1">2</mat-button-toggle>
+    <mat-button-toggle value="2">3</mat-button-toggle>
+    <mat-button-toggle value="3">4</mat-button-toggle>
+    <mat-button-toggle value="4">5</mat-button-toggle>
   </mat-button-toggle-group>
   <mat-divider></mat-divider>
   <button mat-raised-button color="primary" routerLink="principal" routerLinkActive="active" (click)="enviar()">

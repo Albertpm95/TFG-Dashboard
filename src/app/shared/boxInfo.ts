@@ -6,7 +6,7 @@ export class BoxInfo {
   temperaturaActual!: number;
   humedadActual!: number;
   ruidoActual!: number;
-  luminosidadActual!: number;
+
   calidadAireActual!:
     | 'muy mala'
     | 'mala'

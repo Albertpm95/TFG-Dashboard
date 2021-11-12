@@ -6,7 +6,7 @@
   align-items: center;
   padding: 1em;
   border: solid 1px black;
-  border-radius: 15px;
+
   background-color: white;
   width: 225px;
   height: 225px;
@@ -16,18 +16,17 @@
   box-shadow: 3px 3px 10px 1px black;
 
   .mat-icon {
-    color: black
+    color: black;
   }
 
   h3 {
     color: black;
-    
+
     text-decoration: underline;
   }
 
   a {
     text-decoration: none;
     color: black;
-
   }
 }

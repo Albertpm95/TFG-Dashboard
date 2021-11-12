@@ -8,9 +8,12 @@
     <app-box [idBox]="norte.id" [nombre]="norte.nombre" class="box" id="boxNorte" (click)="cambiarFocus('boxNorte')"
       (click)="abrirDetalles('boxNorte')">
     </app-box>
-    <app-box [idBox]="plaza.id" [nombre]="plaza.nombre" class="box" id="boxPlaza" (click)="cambiarFocus('boxPlaza')"
-      (click)="abrirDetalles('boxPlaza')">
-    </app-box>
+    <div>
+      <app-box [idBox]="plaza.id" [nombre]="plaza.nombre" class="box" id="boxPlaza" (click)="cambiarFocus('boxPlaza')"
+        (click)="abrirDetalles('boxPlaza')">
+      </app-box>
+    </div>
+
     <app-box [idBox]="sur.id" [nombre]="sur.nombre" class="box" id="boxSur" (click)="cambiarFocus('boxSur')"
       (click)="abrirDetalles('boxSur')">
     </app-box>

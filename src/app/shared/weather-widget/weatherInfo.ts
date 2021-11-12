@@ -1,7 +1,7 @@
 import { Clouds } from './weatherClouds';
 import { Coord } from './weatherCoord';
-import { WeatherEntity } from './WeatherEntity';
-import { Main } from './WeatherMain';
+import { WeatherEntity } from './weatherEntity';
+import { Main } from './weatherMain';
 import { Sys } from './weatherSys';
 import { Wind } from './weatherWind';
 
