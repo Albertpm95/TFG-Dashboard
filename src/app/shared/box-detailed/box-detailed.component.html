@@ -1,0 +1,21 @@
+<div class="container-box-detailed" id="container-box-detailed-{{idBox}}">
+    <div class="detalles">
+        <h3 id="nombre-{{idBox}}">{{ boxInfo.tituloBox }}</h3>
+        <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon><label id="{{idBox}}-labelTemp">Temperatura:
+            {{
+            boxInfo.temperaturaActual }}ºC</label><br />
+
+        <mat-icon id="{{idBox}}-warningHumidity">fiber_manual_record</mat-icon><label
+            id="{{idBox}}-labelHumidity">Humedad:
+            {{
+            boxInfo.humedadActual }}%</label><br />
+
+        <mat-icon id="{{idBox}}-warningDB">fiber_manual_record</mat-icon><label id="{{idBox}}-labelDB">Ruido:
+            {{ boxInfo.ruidoActual }}db</label><br />
+
+        <h4>Confort medio: {{ satisfaccionMedia }}</h4>
+    </div>
+
+    <mat-divider [vertical]="true"></mat-divider>
+    <app-air-quality-details></app-air-quality-details>
+</div>

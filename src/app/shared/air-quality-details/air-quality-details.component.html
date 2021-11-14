@@ -1,25 +1,38 @@
 <div class="container">
-  <mat-icon id="boxPlazaWarningRespirables">fiber_manual_record</mat-icon><label
-    id="boxPlaza-labelRespirables"><b></b>PM10:
-    {{detallesAire.particulasRespirables}} µg/m³ de 35*.</label><br />
+  <h3>Informacion detallada</h3>
+  <label id="boxPlaza-labelRespirables">
+    <mat-icon id="boxPlazaWarningRespirables">fiber_manual_record</mat-icon><b>PM10:</b>
+    {{detallesAire.particulasRespirables}} µg/m³ de 35*.
+  </label>
 
-  <mat-icon id="boxPlaza-WarningFinas">fiber_manual_record</mat-icon><label class="boxPlaza-label"><b>PM2.5:</b> {{
+  <label class="boxPlaza-label">
+    <mat-icon id="boxPlaza-WarningFinas">fiber_manual_record</mat-icon><b>PM2.5:</b> {{
     detallesAire.particulasFinas
-    }}µg/m³ de 25*.</label><br />
+    }}µg/m³ de 25*.
 
-  <mat-icon id="boxPlaza-WarningOzono">fiber_manual_record</mat-icon><label class="boxPlaza-label"><b></b>O3:
+  </label>
+
+  <label class="boxPlaza-label">
+    <mat-icon id="boxPlaza-WarningOzono">fiber_manual_record</mat-icon><b>O3:</b>
     {{
     detallesAire.ozono
-    }}µg/m³ de 180*.</label><br />
+    }}µg/m³ de 180*.
 
-  <mat-icon id="boxPlaza-WarningNitrogeno">fiber_manual_record</mat-icon><label class="boxPlaza-label">NO2:
+  </label>
+
+  <label class="boxPlaza-label">
+    <mat-icon id="boxPlaza-WarningNitrogeno">fiber_manual_record</mat-icon><b>NO2:</b>
     {{
     detallesAire.dioxidoNitrogeno
-    }}µg/m³ de 200*.</label><br />
+    }}µg/m³ de 200*.
 
-  <mat-icon id="boxPlaza-WarningAzufre">fiber_manual_record</mat-icon><label class="boxPlaza-label">SO2: {{
+  </label>
+
+  <label class="boxPlaza-label">
+    <mat-icon id="boxPlaza-WarningAzufre">fiber_manual_record</mat-icon><b>SO2:</b> {{
     detallesAire.dioxidoAzufre
-    }}µg/m³ de 350*.</label><br />
+    }}µg/m³ de 350*.
+  </label>
 
   <h5>* recomendacion maxima diaria.</h5>
 </div>

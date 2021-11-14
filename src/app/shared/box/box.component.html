@@ -1,5 +1,5 @@
 <div class="container-box" id="container-box-{{idBox}}">
-  <h3 id="nombreBox">{{ boxInfo.tituloBox }}</h3>
+  <h3 id="nombre-{{idBox}}">{{ boxInfo.tituloBox }}</h3>
   <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon><label id="{{idBox}}-labelTemp">Temperatura: {{
     boxInfo.temperaturaActual }}ºC</label><br />
 
@@ -13,4 +13,5 @@
     Aire:
     {{ boxInfo.calidadAireActual }}</label><br />
   <h4>Confort medio: {{ satisfaccionMedia }}</h4>
+
 </div>

@@ -1,17 +1,22 @@
-<div class="container">
-  <div id="divOeste">
-    <app-box [idBox]="oeste.id" [nombre]="oeste.nombre" class="box" id="boxOeste" (>
+<div class="container-oficina">
+
+  <div id="divIzquierdo">
+    <app-box [idBox]="oeste.id" [nombre]="oeste.nombre" class="box" id="boxOeste">
     </app-box>
   </div>
+
   <div id="divCentral">
     <app-box [idBox]="norte.id" [nombre]="norte.nombre" class="box" id="boxNorte">
     </app-box>
+
+    <app-box-detailed [idBox]="plaza.id" [nombre]="plaza.nombre"></app-box-detailed>
 
     <app-box [idBox]="sur.id" [nombre]="sur.nombre" class="box" id="boxSur">
     </app-box>
   </div>
 
-  <div id="divEste">
+
+  <div id="divDerecho">
     <app-box [idBox]="este.id" [nombre]="este.nombre" class="box" id="boxEste">
     </app-box>
   </div>

@@ -1,15 +1,14 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { delay } from 'rxjs/operators';
 import { BoxInfo } from '../boxInfo';
 import { Oficina } from '../mockInfo';
-import { startWith, tap, delay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-box',
-  templateUrl: './box.component.html',
-  styleUrls: ['./box.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'app-box-detailed',
+  templateUrl: './box-detailed.component.html',
+  styleUrls: ['./box-detailed.component.scss'],
 })
-export class BoxComponent implements OnInit {
+export class BoxDetailedComponent implements OnInit {
   @Input() nombre!: string;
   @Input() idBox!: string;
 

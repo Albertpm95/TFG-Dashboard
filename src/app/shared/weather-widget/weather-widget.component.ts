@@ -15,22 +15,22 @@ export class WeatherWidgetComponent implements OnInit {
   obs$ = interval(900000);
   extras!: WeatherEntity[];
   ultimaActualizacion = '';
-  horaActual = new Date();
+  horaActual!: Date;
 
   constructor() {}
 
   ngOnInit(): void {
     this.getData();
-    console.log(this.getForecast());
-    this.ultimaActualizacion =
-      this.horaActual.getHours().toLocaleString() +
-      ':' +
-      this.horaActual.getMinutes().toLocaleString();
   }
 
   ngAfterViewInit(): void {}
 
   getData() {
+    this.horaActual = new Date();
+    this.ultimaActualizacion =
+      this.horaActual.getHours().toLocaleString() +
+      ':' +
+      this.horaActual.getMinutes().toLocaleString();
     fetch(
       'https://api.openweathermap.org/data/2.5/weather?q=Paterna&appid=9416facf5188cc40fe5ba4f71e2f4f06&lang=es&&units=metric'
     )

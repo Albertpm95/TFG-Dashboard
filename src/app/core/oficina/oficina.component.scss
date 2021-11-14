@@ -1,27 +1,29 @@
-.container {
+.container-oficina {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: absolute;
-  left: 20vw;
-  width: 55vw;
+  width: 80vw;
   height: 100vh;
 }
-#divOeste, #divEste{
+#divIzquierdo,
+#divDerecho {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-#divCentral{
+#divCentral {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: 100%;
+  height: 100vh;
 }
+
 .box {
-  width: fit-content;
+  width: max-content;
+  height: max-content;
   border-radius: 15px;
 }

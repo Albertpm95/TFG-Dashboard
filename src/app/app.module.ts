@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { PrincipalComponent } from './core/principal/principal.component';
 import { QRComponent } from './core/qr/qr.component';
-import { InfoExtraComponent } from './core/info-extra/info-extra.component';
 import { OficinaComponent } from './core/oficina/oficina.component';
 import { FeedbackComponent } from './core/feedback/feedback.component';
 import { BoxComponent } from './shared/box/box.component';
@@ -22,18 +21,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     QRComponent,
-    InfoExtraComponent,
     OficinaComponent,
     FeedbackComponent,
     BoxComponent,
     AirQualityDetailsComponent,
     WeatherWidgetComponent,
+    BoxDetailedComponent,
   ],
   imports: [
     BrowserModule,

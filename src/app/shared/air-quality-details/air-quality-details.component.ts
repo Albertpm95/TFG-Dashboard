@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { delay } from 'rxjs/operators';
 import { BoxInfo } from '../boxInfo';
 import { DetallesAire } from '../detallesAire';
 import { Oficina } from '../mockInfo';
@@ -17,26 +18,29 @@ export class AirQualityDetailsComponent implements OnInit {
   constructor() {}
 
   ngOnChanges(): void {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let boxInf = this.oficina.find((i) => i.idBox === 'boxPlaza');
+
+    if (boxInf != null) {
+      this.boxInfo = boxInf;
+
+      if (boxInf.detallesAire != null) {
+        this.detallesAire = boxInf.detallesAire;
+      }
+    }
+  }
 
   ngAfterViewInit() {
+    delay(0);
     this.load();
   }
 
   load(): void {
-    var boxInfo = this.oficina.find((i) => i.idBox === 'boxPlaza');
-
-    if (boxInfo != null) {
-      this.boxInfo = boxInfo;
-
-      if (boxInfo.detallesAire != null) {
-        this.detallesAire = boxInfo.detallesAire;
-      }
-    }
-    this.comprobarWarnings();
+    delay(0);
   }
 
   comprobarWarnings() {
+    delay(0);
     this.warningPM10();
     this.warningPM25();
     this.warningO3();
@@ -46,6 +50,8 @@ export class AirQualityDetailsComponent implements OnInit {
 
   warningSO2() {
     var warningIconSO2 = document.getElementById('boxPlazaWarningAzufre');
+
+    console.log(warningIconSO2);
     if (warningIconSO2 != null) {
       if (
         this.detallesAire.dioxidoAzufre > 50 &&
@@ -62,6 +68,8 @@ export class AirQualityDetailsComponent implements OnInit {
   }
   warningNO2() {
     var warningIconNO2 = document.getElementById('boxPlazaWarningNitrogeno');
+
+    console.log(warningIconNO2);
 
     if (warningIconNO2 != null) {
       if (
@@ -81,6 +89,8 @@ export class AirQualityDetailsComponent implements OnInit {
   warningO3() {
     var warningIconO3 = document.getElementById('boxPlazaWarningOzono');
 
+    console.log(warningIconO3);
+
     if (warningIconO3 != null) {
       if (this.detallesAire.ozono > 180 && this.detallesAire.ozono < 600)
         warningIconO3.style.color = 'red';
@@ -92,6 +102,8 @@ export class AirQualityDetailsComponent implements OnInit {
 
   warningPM10() {
     var warningIconPM10 = document.getElementById('boxPlazaWarningRespirables');
+
+    console.log(warningIconPM10);
 
     if (warningIconPM10 != null) {
       if (
@@ -110,6 +122,8 @@ export class AirQualityDetailsComponent implements OnInit {
 
   warningPM25() {
     var warningIconPM25 = document.getElementById('boxPlazaWarningFinas');
+
+    console.log(warningIconPM25);
 
     if (warningIconPM25 != null) {
       if (
