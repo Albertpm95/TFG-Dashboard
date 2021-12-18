@@ -4,14 +4,37 @@
   justify-content: center;
   font-size: 20px;
   align-self: center;
+  max-height: 100%;
   width: max-content;
   height: max-content;
 }
+#ciudad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .mat-divider {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
   border: solid 1px gray;
 }
 #labelCiudad {
   font-size: 24px;
+}
+#iconos {
+  display: flex;
+  flex-flow: nowrap;
+  width: 100%;
+  border: solid 1px gray;
+  border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
+}
+img {
+  width: 30%;
+}
+@media only screen and (max-width: 1305px) {
+  .container {
+    width: 100%;
+    border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
+  }
 }

@@ -1,29 +1,63 @@
 .container-oficina {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 80vw;
-  height: 100vh;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  width: 100%;
 }
-#divIzquierdo,
-#divDerecho {
+.divBoxes {
   display: flex;
+  width: 100%;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
-
 #divCentral {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100vh;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
 }
-
 .box {
   width: max-content;
   height: max-content;
-  border-radius: 15px;
+  justify-content: center;
+  border: solid black 1px;
+  border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+
+@media only screen and (max-width: 1305px) {
+  .container-oficina {
+    height: fit-content;
+    flex-direction: column !important;
+    background-color: gray;
+  }
+  .divBoxes {
+    width: 100vw;
+    height: auto;
+    border: none;
+  }
+  #divCentral {
+    max-width: 100% !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+  }
+  .box,
+  app-box-detailed {
+    width: 100%;
+    border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
+    border: none;
+  }
+
+  .divBoxes {
+    width: 100vw;
+  }
+
+  app-box {
+    width: 100vw;
+  }
 }

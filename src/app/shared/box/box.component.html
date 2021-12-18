@@ -1,17 +1,25 @@
 <div class="container-box" id="container-box-{{idBox}}">
   <h3 id="nombre-{{idBox}}">{{ boxInfo.tituloBox }}</h3>
-  <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon><label id="{{idBox}}-labelTemp">Temperatura: {{
-    boxInfo.temperaturaActual }}ºC</label><br />
+  <label id="{{idBox}}-labelTemp">
+    <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon>Temperatura: {{
+    boxInfo.temperaturaActual }}ºC
+  </label>
 
-  <mat-icon id="{{idBox}}-warningHumidity">fiber_manual_record</mat-icon><label id="{{idBox}}-labelHumidity">Humedad: {{
-    boxInfo.humedadActual }}%</label><br />
+  <label id="{{idBox}}-labelHumidity">
+    <mat-icon id="{{idBox}}-warningHumidity">fiber_manual_record</mat-icon>Humedad: {{
+    boxInfo.humedadActual }}%
+  </label>
 
-  <mat-icon id="{{idBox}}-warningDB">fiber_manual_record</mat-icon><label id="{{idBox}}-labelDB">Ruido:
-    {{ boxInfo.ruidoActual }}db</label><br />
+  <label id="{{idBox}}-labelDB">
+    <mat-icon id="{{idBox}}-warningDB">fiber_manual_record</mat-icon>Ruido:
+    {{ boxInfo.ruidoActual }}db
+  </label>
 
-  <mat-icon id="{{idBox}}-warningAirQuality">fiber_manual_record</mat-icon><label id="{{idBox}}-labelAirQuality">Calidad
+  <label id="{{idBox}}-labelAirQuality">
+    <mat-icon id="{{idBox}}-warningAirQuality">fiber_manual_record</mat-icon>Calidad
     Aire:
-    {{ boxInfo.calidadAireActual }}</label><br />
+    {{ boxInfo.calidadAireActual }}
+  </label>
   <h4>Confort medio: {{ satisfaccionMedia }}</h4>
 
 </div>

@@ -1,22 +1,26 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { BoxInfo } from '../boxInfo';
 import { Oficina } from '../mockInfo';
-import { startWith, tap, delay } from 'rxjs/operators';
+import { Feedback } from '../Feedback';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-box',
   templateUrl: './box.component.html',
   styleUrls: ['./box.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class BoxComponent implements OnInit {
   @Input() nombre!: string;
   @Input() idBox!: string;
+  @Input() feedbacks!: Feedback[];
 
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
 
-  satisfaccionMedia = '';
+  satisfaccionMedia = 'Cargando...';
+  satisfaccionMediaLuminica: number = 0;
+  satisfaccionMediaTermica: number = 0;
+  satisfaccionMediaAcustica: number = 0;
 
   constructor() {}
 
@@ -31,9 +35,10 @@ export class BoxComponent implements OnInit {
   ngAfterViewInit() {
     this.load();
   }
-
+  ngOnChanges() {
+    this.calcularSatisfaccionMedia();
+  }
   load() {
-    delay(0);
     this.comprobarWarnings();
   }
 
@@ -44,7 +49,48 @@ export class BoxComponent implements OnInit {
     this.warningAirQuality();
   }
 
-  calcularSatisfaccionMedia(): void {}
+  calcularSatisfaccionMedia() {
+    if (this.feedbacks.length != 0) {
+      for (let feed of this.feedbacks) {
+        this.satisfaccionMediaAcustica += +feed.Acustico;
+
+        this.satisfaccionMediaLuminica += +feed.Luminico;
+
+        this.satisfaccionMediaTermica += +feed.Termico;
+      }
+
+      this.satisfaccionMediaAcustica =
+        +this.satisfaccionMediaAcustica / +this.feedbacks.length;
+      this.satisfaccionMediaLuminica =
+        +this.satisfaccionMediaLuminica / +this.feedbacks.length;
+      this.satisfaccionMediaTermica =
+        +this.satisfaccionMediaTermica / +this.feedbacks.length;
+
+      let temp =
+        (+this.satisfaccionMediaAcustica +
+          +this.satisfaccionMediaLuminica +
+          +this.satisfaccionMediaTermica) /
+        3;
+
+      switch (Math.round(temp)) {
+        case 1:
+          this.satisfaccionMedia = 'Muy mala';
+          break;
+        case 2:
+          this.satisfaccionMedia = 'Mala';
+          break;
+        case 3:
+          this.satisfaccionMedia = 'Regular';
+          break;
+        case 4:
+          this.satisfaccionMedia = 'Buena';
+          break;
+        case 5:
+          this.satisfaccionMedia = 'Muy buena';
+          break;
+      }
+    }
+  }
 
   warningTemp() {
     var warningTempIcon = document.getElementById(this.idBox + '-warningTemp');

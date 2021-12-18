@@ -31,16 +31,14 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    delay(0);
     this.load();
   }
 
   load(): void {
-    delay(0);
+    this.comprobarWarnings();
   }
 
   comprobarWarnings() {
-    delay(0);
     this.warningPM10();
     this.warningPM25();
     this.warningO3();
@@ -49,9 +47,8 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningSO2() {
-    var warningIconSO2 = document.getElementById('boxPlazaWarningAzufre');
+    var warningIconSO2 = document.getElementById('boxPlaza-WarningAzufre');
 
-    console.log(warningIconSO2);
     if (warningIconSO2 != null) {
       if (
         this.detallesAire.dioxidoAzufre > 50 &&
@@ -67,9 +64,7 @@ export class AirQualityDetailsComponent implements OnInit {
     }
   }
   warningNO2() {
-    var warningIconNO2 = document.getElementById('boxPlazaWarningNitrogeno');
-
-    console.log(warningIconNO2);
+    var warningIconNO2 = document.getElementById('boxPlaza-WarningNitrogeno');
 
     if (warningIconNO2 != null) {
       if (
@@ -87,9 +82,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningO3() {
-    var warningIconO3 = document.getElementById('boxPlazaWarningOzono');
-
-    console.log(warningIconO3);
+    var warningIconO3 = document.getElementById('boxPlaza-WarningOzono');
 
     if (warningIconO3 != null) {
       if (this.detallesAire.ozono > 180 && this.detallesAire.ozono < 600)
@@ -101,9 +94,9 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningPM10() {
-    var warningIconPM10 = document.getElementById('boxPlazaWarningRespirables');
-
-    console.log(warningIconPM10);
+    var warningIconPM10 = document.getElementById(
+      'boxPlaza-WarningRespirables'
+    );
 
     if (warningIconPM10 != null) {
       if (
@@ -121,9 +114,7 @@ export class AirQualityDetailsComponent implements OnInit {
   }
 
   warningPM25() {
-    var warningIconPM25 = document.getElementById('boxPlazaWarningFinas');
-
-    console.log(warningIconPM25);
+    var warningIconPM25 = document.getElementById('boxPlaza-WarningFinas');
 
     if (warningIconPM25 != null) {
       if (

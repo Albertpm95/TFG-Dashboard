@@ -22,6 +22,7 @@ import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.c
 
 import { HttpClientModule } from '@angular/common/http';
 import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.component';
+import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,14 @@ import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.compone
     MatButtonModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: API_KEY,
+      useValue:
+        '191888249236-0v9ju9om8cpma31um9hpspu8q8eulmjh.apps.googleusercontent.com',
+    },
+    GoogleSheetsDbService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

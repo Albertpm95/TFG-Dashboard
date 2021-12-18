@@ -1,23 +1,27 @@
 <div class="container-oficina">
 
-  <div id="divIzquierdo">
-    <app-box [idBox]="oeste.id" [nombre]="oeste.nombre" class="box" id="boxOeste">
+  <div class="divBoxes" id="divSuperior">
+    <app-box *ngIf="completado" [idBox]="norte.id" [nombre]="norte.nombre" [feedbacks]="feedbacksNorte" class="box"
+      id="boxNorte">
     </app-box>
   </div>
 
-  <div id="divCentral">
-    <app-box [idBox]="norte.id" [nombre]="norte.nombre" class="box" id="boxNorte">
+  <div class="divBoxes" id="divCentral">
+    <app-box *ngIf="completado" [idBox]="oeste.id" [nombre]="oeste.nombre" [feedbacks]="feedbacksOeste" class="box"
+      id="boxOeste">
     </app-box>
 
-    <app-box-detailed [idBox]="plaza.id" [nombre]="plaza.nombre"></app-box-detailed>
+    <app-box-detailed *ngIf="completado" [idBox]="plaza.id" [nombre]="plaza.nombre" [feedbacks]="feedbacksPlaza">
+    </app-box-detailed>
 
-    <app-box [idBox]="sur.id" [nombre]="sur.nombre" class="box" id="boxSur">
+    <app-box *ngIf="completado" [idBox]="este.id" [nombre]="este.nombre" [feedbacks]="feedbacksEste" class="box"
+      id="boxEste">
     </app-box>
   </div>
 
-
-  <div id="divDerecho">
-    <app-box [idBox]="este.id" [nombre]="este.nombre" class="box" id="boxEste">
+  <div class="divBoxes" id="divInferior">
+    <app-box *ngIf="completado" [idBox]="sur.id" [nombre]="sur.nombre" [feedbacks]="feedbacksSur" class="box"
+      id="boxSur">
     </app-box>
   </div>
 

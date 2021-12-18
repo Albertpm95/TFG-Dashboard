@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { delay } from 'rxjs/operators';
 import { BoxInfo } from '../boxInfo';
+import { Feedback } from '../Feedback';
 import { Oficina } from '../mockInfo';
 
 @Component({
@@ -11,11 +12,14 @@ import { Oficina } from '../mockInfo';
 export class BoxDetailedComponent implements OnInit {
   @Input() nombre!: string;
   @Input() idBox!: string;
-
+  @Input() feedbacks!: Feedback[];
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
 
-  satisfaccionMedia = '';
+  satisfaccionMedia = 'Cargando...';
+  satisfaccionMediaLuminica = 0;
+  satisfaccionMediaTermica = 0;
+  satisfaccionMediaAcustica = 0;
 
   constructor() {}
 
@@ -30,9 +34,11 @@ export class BoxDetailedComponent implements OnInit {
   ngAfterViewInit() {
     this.load();
   }
+  ngOnChanges() {
+    this.calcularSatisfaccionMedia();
+  }
 
   load() {
-    delay(0);
     this.comprobarWarnings();
   }
 
@@ -43,7 +49,48 @@ export class BoxDetailedComponent implements OnInit {
     this.warningAirQuality();
   }
 
-  calcularSatisfaccionMedia(): void {}
+  calcularSatisfaccionMedia() {
+    if (this.feedbacks.length != 0) {
+      for (let feed of this.feedbacks) {
+        this.satisfaccionMediaAcustica += +feed.Acustico;
+
+        this.satisfaccionMediaLuminica += +feed.Luminico;
+
+        this.satisfaccionMediaTermica += +feed.Termico;
+      }
+
+      this.satisfaccionMediaAcustica =
+        +this.satisfaccionMediaAcustica / +this.feedbacks.length;
+      this.satisfaccionMediaLuminica =
+        +this.satisfaccionMediaLuminica / +this.feedbacks.length;
+      this.satisfaccionMediaTermica =
+        +this.satisfaccionMediaTermica / +this.feedbacks.length;
+
+      let temp =
+        (+this.satisfaccionMediaAcustica +
+          +this.satisfaccionMediaLuminica +
+          +this.satisfaccionMediaTermica) /
+        3;
+
+      switch (Math.round(temp)) {
+        case 1:
+          this.satisfaccionMedia = 'Muy mala';
+          break;
+        case 2:
+          this.satisfaccionMedia = 'Mala';
+          break;
+        case 3:
+          this.satisfaccionMedia = 'Regular';
+          break;
+        case 4:
+          this.satisfaccionMedia = 'Buena';
+          break;
+        case 5:
+          this.satisfaccionMedia = 'Muy buena';
+          break;
+      }
+    }
+  }
 
   warningTemp() {
     var warningTempIcon = document.getElementById(this.idBox + '-warningTemp');
