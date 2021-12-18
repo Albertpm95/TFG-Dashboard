@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { PrincipalComponent } from './core/principal/principal.component';
 import { QRComponent } from './core/qr/qr.component';
 import { OficinaComponent } from './core/oficina/oficina.component';
-import { FeedbackComponent } from './core/feedback/feedback.component';
 import { BoxComponent } from './shared/box/box.component';
 import { AirQualityDetailsComponent } from './shared/air-quality-details/air-quality-details.component';
 
@@ -22,7 +21,6 @@ import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.c
 
 import { HttpClientModule } from '@angular/common/http';
 import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.component';
-import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 
 @NgModule({
   declarations: [
@@ -30,7 +28,6 @@ import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
     PrincipalComponent,
     QRComponent,
     OficinaComponent,
-    FeedbackComponent,
     BoxComponent,
     AirQualityDetailsComponent,
     WeatherWidgetComponent,
@@ -48,14 +45,7 @@ import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
     MatButtonModule,
     HttpClientModule,
   ],
-  providers: [
-    {
-      provide: API_KEY,
-      useValue:
-        '191888249236-0v9ju9om8cpma31um9hpspu8q8eulmjh.apps.googleusercontent.com',
-    },
-    GoogleSheetsDbService,
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
