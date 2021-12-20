@@ -57,7 +57,6 @@ export class OficinaComponent implements OnInit {
       if (respuesta != null) {
         this.feedbacks[1] = respuesta;
         this.horaActual = new Date();
-        
 
         for (let feed of this.feedbacks[1]) {
           let horaTemp = Date.parse(feed[4]);
@@ -66,7 +65,7 @@ export class OficinaComponent implements OnInit {
 
           let H = ms / 3600000;
 
-          if (Math.round(H) <= 3.5) {
+          if (Math.round(H) <= 1) {
             switch (feed[0]) {
               case 'Box Norte':
                 this.feedbacksNorte.push(feed);

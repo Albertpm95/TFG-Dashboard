@@ -13,13 +13,13 @@ export class WeatherWidgetComponent implements OnInit {
   weatherInfo!: WeatherInfo;
   forecast!: Weather;
   ultimaActualizacion = '';
-  proximoDia1 = '';
-  proximoDia2 = '';
-  proximoDia3 = '';
+
   horaActual!: Date;
   velViento = 0;
   rachasViento = 0;
   dirViento = '';
+  tempAct = 0;
+  tempFeel = 0;
   constructor() {}
 
   ngOnInit(): void {
@@ -68,7 +68,11 @@ export class WeatherWidgetComponent implements OnInit {
         this.velViento = Math.floor(this.weatherInfo.wind.speed * 3.6);
         this.rachasViento = Math.floor(this.weatherInfo.wind.gust * 3.6);
         this.dirViento = this.DegToDir(Math.floor(this.weatherInfo.wind.deg));
-        this.proximoDia1 =
+        this.weatherInfo.main.temp = Math.round(this.weatherInfo.main.temp);
+        this.weatherInfo.main.feels_like = Math.round(
+          this.weatherInfo.main.feels_like
+        );
+        this.weatherInfo.weather[0].icon =
           'http://openweathermap.org/img/w/' +
           this.weatherInfo.weather[0].icon +
           '.png';
@@ -82,15 +86,15 @@ export class WeatherWidgetComponent implements OnInit {
       .then((data) => {
         if (data != null && data != undefined) this.forecast = data;
 
-        this.proximoDia1 =
+        this.forecast.daily![1].weather![0].icon =
           'http://openweathermap.org/img/w/' +
           this.forecast.daily![1].weather![0].icon +
           '.png';
-        this.proximoDia2 =
+        this.forecast.daily![2].weather![0].icon =
           'http://openweathermap.org/img/w/' +
           this.forecast.daily![2].weather![0].icon +
           '.png';
-        this.proximoDia3 =
+        this.forecast.daily![3].weather![0].icon =
           'http://openweathermap.org/img/w/' +
           this.forecast.daily![3].weather![0].icon +
           '.png';

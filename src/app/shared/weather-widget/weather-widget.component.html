@@ -1,22 +1,21 @@
 <div class="container" *ngIf="weatherInfo != null">
-  <div id="ciudad"><label id="labelCiudad"><b>{{ weatherInfo.name }}</b> </label><img id="wicon1" src="{{proximoDia1}}"
-      alt="Weather icon"></div>
-
-
-  <mat-divider></mat-divider>
-
-  <label><b>Temperatura actual:</b> {{ weatherInfo.main.temp }}ºC</label><br />
-  <label><b>Sensacion termica:</b> {{ weatherInfo.main.feels_like }}ºC</label>
+  <div id="ciudad"><label id="labelCiudad"><b>{{ weatherInfo.name }}</b> </label><img id="wicon1"
+      src="{{ this.forecast.daily![1].weather![0].icon }}" alt="Weather icon"></div>
 
   <mat-divider></mat-divider>
 
-  <label><b>Presion atmosferica:</b> {{ weatherInfo.main.pressure }}hPa</label><br />
+  <label><b>Temperatura actual:</b> {{ this.weatherInfo.main.temp }}ºC</label><br />
+  <label><b>Sensacion termica:</b> {{ tempFeel }}ºC</label>
+
+  <mat-divider></mat-divider>
+
+  <label><b>Presion atmosferica:</b> {{ weatherInfo.main.pressure }} hPa</label><br />
   <label><b>Humedad:</b> {{ weatherInfo.main.humidity }}%</label>
 
   <mat-divider></mat-divider>
 
-  <label><b>Velocidad del viento:</b> {{ velViento }}km/h {{ dirViento }}</label><br />
-  <label><b>Rachas de viento:</b> {{ rachasViento }}km/h {{ dirViento }}</label>
+  <label><b>Velocidad del viento:</b> {{ velViento }} km/h {{ dirViento }}</label><br />
+  <label><b>Rachas de viento:</b> {{ rachasViento }} km/h {{ dirViento }}</label>
 
 
   <mat-divider></mat-divider>
@@ -28,9 +27,9 @@
 
   <label><b>Prevision proximos 3 dias:</b></label><br>
   <div id="iconos">
-    <img id="wicon1" src="{{proximoDia1}}" alt="Weather icon">
-    <img id="wicon2" src="{{proximoDia2}}" alt="Weather icon">
-    <img id="wicon3" src="{{proximoDia3}}" alt="Weather icon">
+    <img id="wicon1" src="{{ this.forecast.daily![1].weather![0].icon }}" alt="Weather icon">
+    <img id="wicon2" src="{{ this.forecast.daily![2].weather![0].icon }}" alt="Weather icon">
+    <img id="wicon3" src="{{ this.forecast.daily![3].weather![0].icon }}" alt="Weather icon">
   </div>
 
   <mat-divider [vertical]="true"></mat-divider>

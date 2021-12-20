@@ -16,7 +16,7 @@ export class BoxDetailedComponent implements OnInit {
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
 
-  satisfaccionMedia = 'Cargando...';
+  satisfaccionMedia = 'Sin datos recientes';
   satisfaccionMediaLuminica = 0;
   satisfaccionMediaTermica = 0;
   satisfaccionMediaAcustica = 0;
@@ -59,14 +59,12 @@ export class BoxDetailedComponent implements OnInit {
         this.satisfaccionMediaTermica += +feed[3];
       }
 
-
       this.satisfaccionMediaAcustica =
         +this.satisfaccionMediaAcustica / +this.feedbacks.length;
       this.satisfaccionMediaLuminica =
         +this.satisfaccionMediaLuminica / +this.feedbacks.length;
       this.satisfaccionMediaTermica =
         +this.satisfaccionMediaTermica / +this.feedbacks.length;
-
 
       let temp =
         (+this.satisfaccionMediaAcustica +
@@ -76,19 +74,19 @@ export class BoxDetailedComponent implements OnInit {
 
       switch (Math.round(temp)) {
         case 1:
-          this.satisfaccionMedia = 'Muy mala';
+          this.satisfaccionMedia = 'Muy malo';
           break;
         case 2:
-          this.satisfaccionMedia = 'Mala';
+          this.satisfaccionMedia = 'Malo';
           break;
         case 3:
           this.satisfaccionMedia = 'Regular';
           break;
         case 4:
-          this.satisfaccionMedia = 'Buena';
+          this.satisfaccionMedia = 'Bueno';
           break;
         case 5:
-          this.satisfaccionMedia = 'Muy buena';
+          this.satisfaccionMedia = 'Muy bueno';
           break;
       }
     }
