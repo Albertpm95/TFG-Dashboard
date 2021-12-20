@@ -12,12 +12,12 @@ import { delay } from 'rxjs/operators';
 export class BoxComponent implements OnInit {
   @Input() nombre!: string;
   @Input() idBox!: string;
-  @Input() feedbacks!: Feedback[];
+  @Input() feedbacks!: any[];
 
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
 
-  satisfaccionMedia = 'Cargando...';
+  satisfaccionMedia = 'Calculando...';
   satisfaccionMediaLuminica: number = 0;
   satisfaccionMediaTermica: number = 0;
   satisfaccionMediaAcustica: number = 0;
@@ -52,12 +52,13 @@ export class BoxComponent implements OnInit {
   calcularSatisfaccionMedia() {
     if (this.feedbacks.length != 0) {
       for (let feed of this.feedbacks) {
-        this.satisfaccionMediaAcustica += +feed.Acustico;
+        this.satisfaccionMediaAcustica += +feed[1];
 
-        this.satisfaccionMediaLuminica += +feed.Luminico;
+        this.satisfaccionMediaLuminica += +feed[2];
 
-        this.satisfaccionMediaTermica += +feed.Termico;
+        this.satisfaccionMediaTermica += +feed[3];
       }
+
 
       this.satisfaccionMediaAcustica =
         +this.satisfaccionMediaAcustica / +this.feedbacks.length;
@@ -65,6 +66,8 @@ export class BoxComponent implements OnInit {
         +this.satisfaccionMediaLuminica / +this.feedbacks.length;
       this.satisfaccionMediaTermica =
         +this.satisfaccionMediaTermica / +this.feedbacks.length;
+
+
 
       let temp =
         (+this.satisfaccionMediaAcustica +

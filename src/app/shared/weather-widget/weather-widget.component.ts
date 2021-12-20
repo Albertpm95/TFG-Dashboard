@@ -64,7 +64,6 @@ export class WeatherWidgetComponent implements OnInit {
     )
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        console.log(data);
         if (data != null && data != undefined) this.weatherInfo = data;
         this.velViento = Math.floor(this.weatherInfo.wind.speed * 3.6);
         this.rachasViento = Math.floor(this.weatherInfo.wind.gust * 3.6);
