@@ -6,7 +6,6 @@ export const Oficina: BoxInfo[] = [
     tituloBox: 'Oficina Oeste',
     calidadAireActual: 'muy buena',
     humedadActual: 10,
-
     ruidoActual: 10,
     temperaturaActual: 10,
     detallesAire: {

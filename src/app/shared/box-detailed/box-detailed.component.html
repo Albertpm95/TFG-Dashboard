@@ -1,16 +1,17 @@
 <div class="container-box-detailed" id="container-box-detailed-{{idBox}}">
     <div class="detalles">
         <h3 id="nombre-{{idBox}}">{{ boxInfo.tituloBox }}</h3>
-        <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon><label id="{{idBox}}-labelTemp">Temperatura:
+        <mat-icon id="{{idBox}}-warningTemp">fiber_manual_record</mat-icon><label
+            id="{{idBox}}-labelTemp"><b>Temperatura:</b>
             {{
             boxInfo.temperaturaActual }}ºC</label><br />
 
         <mat-icon id="{{idBox}}-warningHumidity">fiber_manual_record</mat-icon><label
-            id="{{idBox}}-labelHumidity">Humedad:
+            id="{{idBox}}-labelHumidity"><b>Humedad:</b>
             {{
             boxInfo.humedadActual }}%</label><br />
 
-        <mat-icon id="{{idBox}}-warningDB">fiber_manual_record</mat-icon><label id="{{idBox}}-labelDB">Ruido:
+        <mat-icon id="{{idBox}}-warningDB">fiber_manual_record</mat-icon><label id="{{idBox}}-labelDB"><b>Ruido:</b>
             {{ boxInfo.ruidoActual }}db</label><br />
 
         <label><b>Confort medio:</b>{{ satisfaccionMedia }}</label>

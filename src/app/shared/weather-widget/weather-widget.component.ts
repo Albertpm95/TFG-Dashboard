@@ -15,19 +15,20 @@ export class WeatherWidgetComponent implements OnInit {
   ultimaActualizacion = '';
 
   horaActual!: Date;
-  velViento = 0;
-  rachasViento = 0;
   dirViento = '';
-  tempAct = 0;
-  tempFeel = 0;
+
+  weatherBool = false;
+  forecastBool = false;
+
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
     this.getData();
     this.getForecast();
+    this.repetir();
   }
-
-  ngAfterViewInit(): void {}
 
   public DegToDir(deg: number): string {
     let dir = '';
@@ -64,18 +65,25 @@ export class WeatherWidgetComponent implements OnInit {
     )
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        if (data != null && data != undefined) this.weatherInfo = data;
-        this.velViento = Math.floor(this.weatherInfo.wind.speed * 3.6);
-        this.rachasViento = Math.floor(this.weatherInfo.wind.gust * 3.6);
-        this.dirViento = this.DegToDir(Math.floor(this.weatherInfo.wind.deg));
-        this.weatherInfo.main.temp = Math.round(this.weatherInfo.main.temp);
-        this.weatherInfo.main.feels_like = Math.round(
-          this.weatherInfo.main.feels_like
-        );
-        this.weatherInfo.weather[0].icon =
-          'http://openweathermap.org/img/w/' +
-          this.weatherInfo.weather[0].icon +
-          '.png';
+        if (data != null && data != undefined) {
+          this.weatherInfo = data;
+          this.weatherInfo.wind.speed = Math.floor(
+            this.weatherInfo.wind.speed * 3.6
+          );
+          this.weatherInfo.wind.gust = Math.floor(
+            this.weatherInfo.wind.gust * 3.6
+          );
+          this.dirViento = this.DegToDir(Math.floor(this.weatherInfo.wind.deg));
+          this.weatherInfo.main.temp = Math.round(this.weatherInfo.main.temp);
+          this.weatherInfo.main.feels_like = Math.round(
+            this.weatherInfo.main.feels_like
+          );
+          this.weatherInfo.weather[0].icon =
+            'http://openweathermap.org/img/w/' +
+            this.weatherInfo.weather[0].icon +
+            '.png';
+          this.weatherBool = true;
+        }
       });
   }
   getForecast() {
@@ -84,20 +92,38 @@ export class WeatherWidgetComponent implements OnInit {
     )
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        if (data != null && data != undefined) this.forecast = data;
+        if (data != null && data != undefined) {
+          this.forecast = data;
 
-        this.forecast.daily![1].weather![0].icon =
-          'http://openweathermap.org/img/w/' +
-          this.forecast.daily![1].weather![0].icon +
-          '.png';
-        this.forecast.daily![2].weather![0].icon =
-          'http://openweathermap.org/img/w/' +
-          this.forecast.daily![2].weather![0].icon +
-          '.png';
-        this.forecast.daily![3].weather![0].icon =
-          'http://openweathermap.org/img/w/' +
-          this.forecast.daily![3].weather![0].icon +
-          '.png';
+          this.forecast.daily![1].weather![0].icon =
+            'http://openweathermap.org/img/w/' +
+            this.forecast.daily![1].weather![0].icon +
+            '.png';
+          this.forecast.daily![2].weather![0].icon =
+            'http://openweathermap.org/img/w/' +
+            this.forecast.daily![2].weather![0].icon +
+            '.png';
+          this.forecast.daily![3].weather![0].icon =
+            'http://openweathermap.org/img/w/' +
+            this.forecast.daily![3].weather![0].icon +
+            '.png';
+        }
+        this.forecastBool = true;
       });
+  }
+
+  repetir() {
+    setTimeout(() => {
+      this.horaActual = new Date();
+      this.ultimaActualizacion =
+        this.horaActual.getHours().toLocaleString() +
+        ':' +
+        this.horaActual.getMinutes().toLocaleString() +
+        ':' +
+        this.horaActual.getSeconds().toLocaleString() +
+        '.' +
+        this.horaActual.getMilliseconds().toLocaleString();
+      this.repetir();
+    }, 60000);
   }
 }
