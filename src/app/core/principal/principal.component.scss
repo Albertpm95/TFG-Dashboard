@@ -3,6 +3,8 @@
   flex-direction: row;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+  max-width: 100vw;
   background-image: url(./../../../assets/images/background_oficinas.jpeg);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
@@ -18,7 +20,7 @@
   background-color: white;
   border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
   border: solid 1px black;
-  margin-top: auto;
+  margin-top: 3em;
   margin-bottom: auto;
   margin-left: 2em;
   width: calc(fit-content + 2em);
@@ -30,12 +32,17 @@
   color: black;
   margin-top: 0.5em;
   margin-bottom: 1em;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   line-height: normal;
 
   b {
     width: 100%;
   }
+}
+#logo {
+  width: 80px;
 }
 
 app-oficina {
@@ -55,20 +62,25 @@ app-oficina {
 
   .container-lateral {
     height: fit-content;
-    width: 100vw !important;
+    width: 50vw;
     margin: 0px;
     box-shadow: none;
     border: none;
-    padding: 1em;
+    padding: 0em;
     background-color: white;
+    margin: 0px;
   }
+
   app-oficina {
     display: flex;
     height: auto;
-    width: 100vw;
+    width: 50vw;
     border-left: solid 1px black;
+    margin: 0px;
+    padding: 0px;
+    max-width: 50vw;
   }
   .container-lateral + app-oficina {
-    margin-top: 1em;
+    margin: 0em;
   }
 }

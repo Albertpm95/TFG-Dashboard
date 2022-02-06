@@ -4,17 +4,22 @@
   box-shadow: 0px 0px 10px 2px black;
   width: max-content;
   height: max-content;
-  border-radius: max(0px, min(15px, ((100vw - 7px) - 100%) * 9999)) / 15px;
+  border-radius: 15px;
   padding: 20px;
   background-color: white;
 }
 
 @media only screen and (max-width: 1305px) {
   .container-box {
+    display: flex;
     width: 100%;
+    max-width: 50vw;
     margin: 0px;
     box-shadow: none;
-    align-items: center;
+    align-items: flex-start;
     background-color: rgb(209, 209, 209);
+    border-radius: 0px;
+    padding: 0px;
+    padding-left: 10px;
   }
 }

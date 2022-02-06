@@ -3,6 +3,7 @@
   flex-flow: column wrap;
   justify-content: space-around;
   width: 100%;
+  overflow-x: hidden;
 }
 .divBoxes {
   display: flex;
@@ -54,10 +55,10 @@
   }
 
   .divBoxes {
-    width: 100vw;
+    width: 100%;
   }
 
   app-box {
-    width: 100vw;
+    width: 100%;
   }
 }

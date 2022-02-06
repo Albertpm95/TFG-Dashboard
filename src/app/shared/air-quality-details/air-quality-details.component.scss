@@ -5,3 +5,23 @@
   width: max-content;
   height: 200px;
 }
+@media only screen and (max-width: 1305px) {
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: max-content;
+    max-width: 50vw;
+    height: max-content;
+    padding-left: 10px;
+  }
+  h3 {
+    display: flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  label {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
