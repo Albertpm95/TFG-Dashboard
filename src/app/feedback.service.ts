@@ -12,6 +12,6 @@ export class FeedbackService {
   constructor(private http: HttpClient) {}
 
   getFeedback(): Observable<Feedback[]> {
-    return this.http.get<Feedback[]>(`${API_URL}/feedback`);
+    return this.http.get<Feedback[]>(`${API_URL}/recuperar-feedback`);
   }
 }
