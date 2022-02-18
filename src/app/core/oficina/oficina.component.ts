@@ -41,7 +41,7 @@ export class OficinaComponent implements OnInit {
   feedbacksEste: Feedback[] = [];
   feedbacksOeste: Feedback[] = [];
   feedbackTemp = new Feedback();
-  completado = false;
+  completado = true;
   horaActual!: Date;
 
   constructor(private feedbackService: FeedbackService) {}
