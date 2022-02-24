@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Feedback } from 'src/app/shared/Feedback';
 import { FeedbackService } from 'src/app/feedback.service';
+
 @Component({
   selector: 'app-oficina',
   templateUrl: './oficina.component.html',
@@ -34,15 +34,13 @@ export class OficinaComponent implements OnInit {
     nombre: 'PLAZA',
   };
 
-  feedbacks: any[][] = [];
-  feedbacksNorte: Feedback[] = [];
-  feedbacksPlaza: Feedback[] = [];
+  feedbacksNorte: Array<Feedback> = [];
+  feedbacksPlaza: Array<Feedback> = [];
   feedbacksSur: Feedback[] = [];
   feedbacksEste: Feedback[] = [];
   feedbacksOeste: Feedback[] = [];
-  feedbackTemp = new Feedback();
-  completado = true;
-  horaActual!: Date;
+
+  completado = false;
 
   constructor(private feedbackService: FeedbackService) {}
 
@@ -53,38 +51,27 @@ export class OficinaComponent implements OnInit {
   }
 
   load(): void {
-    this.feedbackService.getFeedback().subscribe((respuesta) => {
+    this.feedbackService.getFeedback().subscribe((respuesta: Feedback[]) => {
       if (respuesta != null) {
-        this.feedbacks[1] = respuesta;
-        this.horaActual = new Date();
-
-        for (let feed of this.feedbacks[1]) {
-          let horaTemp = Date.parse(feed[4]);
-
-          let ms = this.horaActual.getTime() - horaTemp;
-
-          let H = ms / 3600000;
-
-          if (Math.round(H) <= 1) {
-            switch (feed[0]) {
-              case 'Box Norte':
-                this.feedbacksNorte.push(feed);
-                break;
-              case 'Box Este':
-                this.feedbacksEste.push(feed);
-                break;
-              case 'Plaza':
-                this.feedbacksPlaza.push(feed);
-                break;
-              case 'Box Sur':
-                this.feedbacksSur.push(feed);
-                break;
-              case 'Box Oeste':
-                this.feedbacksOeste.push(feed);
-                break;
-              default:
-                break;
-            }
+        for (let feed of respuesta) {
+          switch (feed.Ubicacion) {
+            case 'Box Norte':
+              this.feedbacksNorte.push(feed);
+              break;
+            case 'Box Este':
+              this.feedbacksEste.push(feed);
+              break;
+            case 'Plaza':
+              this.feedbacksPlaza.push(feed);
+              break;
+            case 'Box Sur':
+              this.feedbacksSur.push(feed);
+              break;
+            case 'Box Oeste':
+              this.feedbacksOeste.push(feed);
+              break;
+            default:
+              break;
           }
         }
         this.completado = true;

@@ -12,7 +12,7 @@ import { Oficina } from '../mockInfo';
 export class BoxDetailedComponent implements OnInit {
   @Input() nombre!: string;
   @Input() idBox!: string;
-  @Input() feedbacks!: any[];
+  @Input() feedbacks!: Feedback[];
   oficina = Oficina;
   boxInfo: BoxInfo = new BoxInfo();
 
@@ -52,11 +52,11 @@ export class BoxDetailedComponent implements OnInit {
   calcularSatisfaccionMedia() {
     if (this.feedbacks.length != 0) {
       for (let feed of this.feedbacks) {
-        this.satisfaccionMediaAcustica += +feed[1];
+        this.satisfaccionMediaAcustica += feed.Acustico;
 
-        this.satisfaccionMediaLuminica += +feed[2];
+        this.satisfaccionMediaLuminica += feed.Luminico;
 
-        this.satisfaccionMediaTermica += +feed[3];
+        this.satisfaccionMediaTermica += feed.Termico;
       }
 
       this.satisfaccionMediaAcustica =

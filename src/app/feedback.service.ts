@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class FeedbackService {
   constructor(private http: HttpClient) {}
 
-  getFeedback(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_URL}/recuperar-feedback`);
+  getFeedback(): Observable<Feedback[]> {
+    return this.http.get<Feedback[]>(`${API_URL}/recuperar-feedback`);
   }
 }
