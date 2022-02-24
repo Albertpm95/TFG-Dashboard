@@ -21,7 +21,7 @@ import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.c
 
 import { HttpClientModule } from '@angular/common/http';
 import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.component';
-import { FeedbackService } from './feedback.service';
+import { FeedbackService } from './core/oficina/feedback.service';
 
 @NgModule({
   declarations: [

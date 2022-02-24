@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Feedback } from 'src/app/shared/Feedback';
-import { FeedbackService } from 'src/app/feedback.service';
+import { FeedbackService } from 'src/app/core/oficina/feedback.service';
 
 @Component({
   selector: 'app-oficina',

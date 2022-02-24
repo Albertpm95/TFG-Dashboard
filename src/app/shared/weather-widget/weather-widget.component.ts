@@ -1,17 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Weather } from './forecast';
-import { WeatherEntity } from './weatherEntity';
-import { WeatherInfo } from './weatherInfo';
-
 @Component({
   selector: 'app-weather-widget',
   templateUrl: './weather-widget.component.html',
   styleUrls: ['./weather-widget.component.scss'],
 })
 export class WeatherWidgetComponent implements OnInit {
-  weatherInfo!: WeatherInfo;
-  forecast!: Weather;
+  weatherInfo!: any;
+  forecast!: any;
   ultimaActualizacion = '';
 
   horaActual!: Date;

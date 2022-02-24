@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { API_URL } from './env';
-import { Feedback } from './shared/Feedback';
+import { API_URL } from '../../env';
+import { Feedback } from '../../shared/Feedback';
 import { Observable } from 'rxjs';
 
 @Injectable({
