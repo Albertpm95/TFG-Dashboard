@@ -52,11 +52,11 @@ export class BoxComponent implements OnInit {
   calcularSatisfaccionMedia() {
     if (this.feedbacks.length != 0) {
       for (let feed of this.feedbacks) {
-        this.satisfaccionMediaAcustica += feed.Acustico;
+        this.satisfaccionMediaAcustica += +feed.acustico;
 
-        this.satisfaccionMediaLuminica += feed.Luminico;
+        this.satisfaccionMediaLuminica += +feed.luminico;
 
-        this.satisfaccionMediaTermica += feed.Termico;
+        this.satisfaccionMediaTermica += +feed.termico;
       }
 
       this.satisfaccionMediaAcustica =

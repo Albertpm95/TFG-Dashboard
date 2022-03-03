@@ -54,7 +54,7 @@ export class OficinaComponent implements OnInit {
     this.feedbackService.getFeedback().subscribe((respuesta: Feedback[]) => {
       if (respuesta != null) {
         for (let feed of respuesta) {
-          switch (feed.Ubicacion) {
+          switch (feed.ubicacion) {
             case 'Box Norte':
               this.feedbacksNorte.push(feed);
               break;

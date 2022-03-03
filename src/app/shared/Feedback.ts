@@ -1,6 +1,6 @@
 ﻿export class Feedback {
-  Ubicacion: string = '';
-  Luminico: number = 0;
-  Termico: number = 0;
-  Acustico: number = 0;
+  ubicacion: string = '';
+  luminico: number = 0;
+  termico: number = 0;
+  acustico: number = 0;
 }
