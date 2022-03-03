@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { API_URL } from '../../env';
 
 import { Observable } from 'rxjs';
+import { Weather } from './weather';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  getWeather(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_URL}/recuperar-weather`);
+  getWeather(): Observable<Weather> {
+    return this.http.get<Weather>(`${API_URL}/recuperar-weather`);
   }
 }

@@ -1,38 +1,32 @@
 <div class="container" *ngIf="weatherBool">
-  <div id="ciudad"><label id="labelCiudad"><b>{{ weatherInfo.name }}</b> </label><img *ngIf="forecastBool" id="wicon1"
-      src="{{ this.forecast.daily![1].weather![0].icon }}" alt="Weather icon"></div>
-
-  <mat-divider></mat-divider>
-
-  <label><b>Temperatura actual:</b> {{ this.weatherInfo.main.temp }}ºC</label><br />
-  <label><b>Sensacion termica:</b> {{ this.weatherInfo.main.feels_like }}ºC</label>
-
-  <mat-divider></mat-divider>
-
-  <label><b>Presion atmosferica:</b> {{ weatherInfo.main.pressure }} hPa</label><br />
-  <label><b>Humedad:</b> {{ weatherInfo.main.humidity }}%</label>
-
-  <mat-divider></mat-divider>
-
-  <label><b>Velocidad del viento:</b> {{ weatherInfo.wind.speed }} km/h {{ dirViento }}</label><br />
-  <label><b>Rachas de viento:</b> {{ weatherInfo.wind.gust }} km/h {{ dirViento }}</label>
-
-
-  <mat-divider></mat-divider>
-
-  <label><b>Nubes:</b> {{ weatherInfo.clouds.all }}%</label>
-
-
-  <mat-divider></mat-divider>
-
-  <label *ngIf="forecastBool"><b>Prevision proximos 3 dias:</b></label><br>
-  <div id="iconos" *ngIf="forecastBool">
-    <img id="wicon1" src="{{ this.forecast.daily![1].weather![0].icon }}" alt="Weather icon">
-    <img id="wicon2" src="{{ this.forecast.daily![2].weather![0].icon }}" alt="Weather icon">
-    <img id="wicon3" src="{{ this.forecast.daily![3].weather![0].icon }}" alt="Weather icon">
+  <div id="ciudad"><label id="labelCiudad"><b>{{weather.ciudad}}</b> </label><img id="wicon1" src="{{weather.icono}}"
+      alt="Weather icon">
   </div>
 
   <mat-divider></mat-divider>
 
-  <label><b>Ultima actualizacion:</b> {{ultimaActualizacion}}</label>
+  <label><b>Temperatura actual:</b> {{weather.hoy.temperatura.temperatura_actual}}ºC</label><br />
+  <label><b>Sensacion termica:</b> {{weather.hoy.temperatura.sensacion_termica}}ºC</label>
+
+  <mat-divider></mat-divider>
+
+  <label><b>Presion atmosferica:</b> {{weather.hoy.presion_atm}} hPa</label><br />
+  <label><b>Humedad:</b> {{weather.hoy.humedad}}%</label>
+
+  <mat-divider></mat-divider>
+
+  <label><b>Velocidad del viento:</b> {{weather.hoy.viento.velocidad}}km/h
+    {{weather.hoy.viento.direccion_viento}}</label><br />
+  <label><b>Nubes:</b>{{weather.hoy.nubes}}%</label>
+
+  <mat-divider></mat-divider>
+
+  <label><b>Prevision proximos 3 dias:</b></label><br>
+  <div id="iconos">
+    <img id="wicon1" src="{{weather.prevision_tres_dias.dia_uno}}" alt="Weather icon">
+    <img id="wicon2" src="{{weather.prevision_tres_dias.dia_dos}}" alt="Weather icon">
+    <img id="wicon3" src="{{weather.prevision_tres_dias.dia_tres}}" alt="Weather icon">
+  </div>
+
+  <mat-divider></mat-divider>
 </div>

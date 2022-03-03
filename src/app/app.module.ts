@@ -18,7 +18,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { WeatherWidgetComponent } from './shared/weather-widget/weather-widget.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { BoxDetailedComponent } from './shared/box-detailed/box-detailed.component';
 import { FeedbackService } from './core/oficina/feedback.service';
