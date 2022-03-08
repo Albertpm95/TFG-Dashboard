@@ -40,7 +40,7 @@ export class OficinaComponent implements OnInit {
   feedbacksEste: Feedback[] = [];
   feedbacksOeste: Feedback[] = [];
 
-  completado = false;
+  completado = true; // Para decidir si mostrar o no los componentes 'box'.
 
   constructor(private feedbackService: FeedbackService) {}
 
@@ -74,8 +74,8 @@ export class OficinaComponent implements OnInit {
               break;
           }
         }
-        this.completado = true;
       }
+      this.completado = true;
     });
   }
 }
