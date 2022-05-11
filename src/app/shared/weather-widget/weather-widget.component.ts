@@ -23,7 +23,6 @@ export class WeatherWidgetComponent implements OnInit {
     this.WeatherService.getWeather().subscribe((respuesta: Weather) => {
       if (respuesta != null) {
         this.weather = respuesta;
-        
       }
       this.weatherBool = true;
     });
